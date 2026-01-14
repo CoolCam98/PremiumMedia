@@ -31,6 +31,12 @@
 
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Questrial&display=swap">
 
   <link rel="stylesheet" href="css/styles.css" />
 
@@ -148,8 +154,11 @@
 
         <div class="video-hero-media">
           <img
-            src="assets/img/band-video.jpg"
+            src="assets/img/band-video.webp"
             alt="Camera operator filming a band"
+            width="450"
+            height="350"
+            fetchpriority="high"
           >
         </div>
       </div>
@@ -165,7 +174,11 @@
           <!-- COLUMN 1: TV & STREAMING COMMERCIALS -->
           <article class="video-block">
             <div class="video-block-media">
-              <img src="assets/img/interview.png" alt="Interview being filmed">
+              <img src="assets/img/interview.webp"
+              alt="Interview being filmed"
+              width="500"
+              height="490"
+              >
             </div>
 
             <div class="video-block-text">
@@ -192,7 +205,11 @@
           <!-- COLUMN 2: BUSINESS, TRAINING & INTERNAL VIDEO -->
           <article class="video-block">
             <div class="video-block-media">
-              <img src="assets/img/spiget.png" alt="Training video being recorded at a work site">
+              <img src="assets/img/spiget.webp"
+              alt="Training video being recorded at a work site"
+              width="500"
+              height="375"
+              >
             </div>
 
             <div class="video-block-text">
@@ -236,9 +253,11 @@
 
         <div class="pitch-media">
           <img
-            src="assets/img/podcast-studio.jpeg"
+            src="assets/img/podcast-studio.webp"
             alt="A person recording an interview in a studio"
             class="pitch-image video-band-image"
+            width="475"
+            height="630"
           >
         </div>
       </div>
@@ -249,8 +268,10 @@
       <div class="container pitch-grid">
         <div class="pitch-media" data-reveal="up" data-delay="100">
           <img
-            src="assets/img/mechanic.jpg"
+            src="assets/img/mechanic.webp"
             alt="A car being worked on in an auto shop"
+            width="580"
+            height="430"
             class="pitch-image"
           >
         </div>
@@ -291,8 +312,10 @@
           </div>
           <div class="video-split-media">
             <img
-              src="assets/img/drone.png"
+              src="assets/img/drone.webp"
               alt="Aerial view of a home captured by drone"
+              width="460"
+              height="310"
             >
           </div>
         </div>
@@ -374,7 +397,7 @@
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          action="/thank-you.html/"
+          action="/thank-you.html"
           aria-describedby="required-note"
         >
           <!-- REQUIRED for Netlify -->
@@ -440,6 +463,7 @@
           <label class="full">
               Tell us about what services you’re looking for*
               <textarea
+                id="services"
                 name="services"
                 rows="4"
                 required
@@ -455,8 +479,10 @@
         <!-- RIGHT: PHOTO -->
         <div class="contact-media">
           <img
-            src="assets/img/backyard.png"
+            src="assets/img/backyard.webp"
             alt="Outdoor scene used as a visual background"
+            width="530"
+            height="300"
             class="contact-image"
           >
         </div>

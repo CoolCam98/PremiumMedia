@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Questrial&family=Syne:wght@400;500;600;700;800&display=swap");
-
 /* =========================================================
    DESIGN TOKENS
 ========================================================= */
@@ -521,7 +519,7 @@ a.btn:hover,
 }
 
 .brand-logo-img {
-  height: clamp(64px, 8vw, 120px);
+  height: clamp(88px, 10vw, 160px);
   width: auto;
   opacity: 1;
   filter: none;
