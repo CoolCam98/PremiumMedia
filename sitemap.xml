@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+
+  <url>
+    <loc>https://www.premiummediafl.com/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://www.premiummediafl.com/videography-production.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.premiummediafl.com/digital-marketing-design.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.premiummediafl.com/photography-events.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.premiummediafl.com/about.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Intern application -->
+  <url>
+    <loc>https://www.premiummediafl.com/intern-application.html</loc>
+    <priority>0.60</priority>
+  </url>
+
+</urlset>
