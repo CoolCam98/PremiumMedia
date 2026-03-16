@@ -4,50 +4,67 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Video Production &amp; Digital Marketing in Central Florida | Premium Media</title>
+  <title>Video Production &amp; Digital Marketing in Plant City &amp; Tampa | Premium Media FL</title>
   <meta
     name="description"
-    content="Local video production and digital marketing company in Plant City, FL. We create commercials, business videos, event coverage, websites, and social media content for Central Florida businesses."
+    content="Premium Media is a video production and digital marketing company in Plant City, FL serving Tampa, Lakeland, and Central Florida. Commercials, business videos, event coverage, websites, and social media content."
   />
 
-  <link rel="canonical" href="https://www.premiummediafl.com/index.html" />
-  <meta name="robots" content="index,follow" />
+  <!-- Canonical should be the clean URL, not /index.html -->
+  <link rel="canonical" href="https://www.premiummediafl.com/" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Premium Media" />
-  <meta property="og:title" content="Video Production &amp; Digital Marketing in Central Florida | Premium Media" />
-  <meta property="og:description" content="Commercials, business videos, event coverage, websites, and marketing for Central Florida businesses." />
-  <meta property="og:url" content="https://www.premiummediafl.com/index.html" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Premium Media FL" />
+  <meta property="og:title" content="Video Production &amp; Digital Marketing in Plant City &amp; Tampa | Premium Media FL" />
+  <meta property="og:description" content="Local video production company in Plant City, FL. Commercials, business videos, event coverage, websites, and social media for Central Florida businesses." />
+  <meta property="og:url" content="https://www.premiummediafl.com/" />
   <meta property="og:image" content="https://www.premiummediafl.com/assets/images/og-premium-media.jpg" />
-  <meta property="og:image:alt" content="Premium Media video production and digital marketing in Central Florida" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Premium Media — video production and digital marketing in Central Florida" />
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Video Production &amp; Digital Marketing in Central Florida | Premium Media" />
-  <meta name="twitter:description" content="Commercials, business videos, event coverage, websites, and marketing for Central Florida businesses." />
+  <meta name="twitter:title" content="Video Production &amp; Digital Marketing in Plant City &amp; Tampa | Premium Media FL" />
+  <meta name="twitter:description" content="Local video production company in Plant City, FL. Commercials, business videos, event coverage, websites, and social media for Central Florida businesses." />
   <meta name="twitter:image" content="https://www.premiummediafl.com/assets/images/og-premium-media.jpg" />
 
+  <!-- Geo -->
   <meta name="geo.region" content="US-FL" />
   <meta name="geo.placename" content="Plant City" />
+  <meta name="geo.position" content="28.0106;-82.1193" />
+  <meta name="ICBM" content="28.0106, -82.1193" />
 
-  <link rel="icon" href="/favicon.ico" />
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Questrial&display=swap">
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Questrial&display=swap" />
 
+  <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css" />
 
+  <!-- Structured Data: LocalBusiness (more complete than ProfessionalService alone) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://www.premiummediafl.com/#business",
     "name": "Premium Media",
     "url": "https://www.premiummediafl.com/",
+    "logo": "https://www.premiummediafl.com/assets/logos/premium-media-logo.webp",
+    "image": "https://www.premiummediafl.com/assets/images/og-premium-media.jpg",
     "telephone": "+18135825576",
     "email": "dallas@premiummediafl.com",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "1003 S Alexander St. Suite 7",
@@ -56,20 +73,81 @@
       "postalCode": "33563",
       "addressCountry": "US"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 28.0106,
+      "longitude": -82.1193
+    },
     "areaServed": [
-      "Plant City, FL",
-      "Tampa, FL",
-      "Lakeland, FL",
-      "Brandon, FL",
-      "Valrico, FL",
-      "Riverview, FL",
-      "Wesley Chapel, FL",
-      "Central Florida"
+      { "@type": "City", "name": "Plant City", "sameAs": "https://en.wikipedia.org/wiki/Plant_City,_Florida" },
+      { "@type": "City", "name": "Tampa" },
+      { "@type": "City", "name": "Lakeland" },
+      { "@type": "City", "name": "Brandon" },
+      { "@type": "City", "name": "Valrico" },
+      { "@type": "City", "name": "Riverview" },
+      { "@type": "City", "name": "Wesley Chapel" }
     ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Media Production Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Commercial Video Production",
+            "description": "TV and online commercials for local businesses in Central Florida"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Business & Corporate Video",
+            "description": "Training videos, onboarding videos, testimonials, and internal communications"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Event Videography & Livestreaming",
+            "description": "Professional event coverage and live streaming services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Digital Marketing & Web Design",
+            "description": "Websites, social media content, branding, and digital marketing"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Photography",
+            "description": "Event and brand photography for marketing and social media"
+          }
+        }
+      ]
+    },
     "sameAs": [
       "https://www.facebook.com/premiummediatampa",
-      "https://www.instagram.com/premiummediafl/"
+      "https://www.instagram.com/premiummediafl/",
+      "https://youtube.com/@premiummedia-gj8de"
     ]
+  }
+  </script>
+
+  <!-- Structured Data: WebSite (enables sitelinks search in Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Premium Media FL",
+    "url": "https://www.premiummediafl.com/"
   }
   </script>
 </head>
@@ -77,56 +155,55 @@
   <!-- HEADER / NAV -->
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
-  <div class="nav-left">
-    <a class="logo" href="index.html" aria-label="Premium Media home">
-      <img src="assets/logos/premium-media-logo.webp" alt="Premium Media logo" width="260" height="65" decoding="async">
-    </a>
+      <div class="nav-left">
+        <a class="logo" href="/" aria-label="Premium Media home">
+          <img src="assets/logos/premium-media-logo.webp" alt="Premium Media logo" width="260" height="65" decoding="async" />
+        </a>
 
-    <!-- Desktop links -->
-    <ul class="nav-links nav-links--desktop">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="videography-production.html">Videography &amp; Production</a></li>
-      <li><a href="digital-marketing-design.html">Digital Marketing &amp; Design</a></li>
-      <li><a href="photography-events.html">Photography</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </div>
+        <!-- Desktop links -->
+        <ul class="nav-links nav-links--desktop">
+          <li><a href="/" aria-current="page">Home</a></li>
+          <li><a href="videography-production.html">Videography &amp; Production</a></li>
+          <li><a href="digital-marketing-design.html">Digital Marketing &amp; Design</a></li>
+          <li><a href="photography-events.html">Photography</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
 
-  <div class="nav-actions">
-    <a class="btn btn-primary nav-cta" href="#contact">Talk to us</a>
+      <div class="nav-actions">
+        <a class="btn btn-primary nav-cta" href="#contact">Talk to us</a>
 
-    <!-- Hamburger (mobile only) -->
-    <button
-      class="nav-toggle"
-      type="button"
-      aria-label="Open menu"
-      aria-controls="mobile-menu"
-      aria-expanded="false"
-    >
-      <span class="nav-toggle__bar" aria-hidden="true"></span>
-      <span class="nav-toggle__bar" aria-hidden="true"></span>
-      <span class="nav-toggle__bar" aria-hidden="true"></span>
-    </button>
-  </div>
+        <!-- Hamburger (mobile only) -->
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+      </div>
 
-  <!-- Mobile menu overlay -->
-  <div class="mobile-menu" id="mobile-menu" hidden>
-    <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Site menu">
-      <button class="mobile-menu__close" type="button" aria-label="Close menu">×</button>
+      <!-- Mobile menu overlay -->
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Site menu">
+          <button class="mobile-menu__close" type="button" aria-label="Close menu">&times;</button>
 
-      <ul class="nav-links nav-links--mobile">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="videography-production.html">Videography &amp; Production</a></li>
-        <li><a href="digital-marketing-design.html">Digital Marketing &amp; Design</a></li>
-        <li><a href="photography-events.html">Photography</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
+          <ul class="nav-links nav-links--mobile">
+            <li><a href="/">Home</a></li>
+            <li><a href="videography-production.html">Videography &amp; Production</a></li>
+            <li><a href="digital-marketing-design.html">Digital Marketing &amp; Design</a></li>
+            <li><a href="photography-events.html">Photography</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
 
-      <a class="btn btn-primary mobile-menu__cta" href="#contact">Talk to us</a>
-    </div>
-  </div>
-</nav>
-
+          <a class="btn btn-primary mobile-menu__cta" href="#contact">Talk to us</a>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <main id="main">
@@ -141,10 +218,11 @@
           loop
           playsinline
           preload="metadata"
+          fetchpriority="high"
           aria-hidden="true"
           tabindex="-1"
         >
-          <source src="assets/videos/hero-reel.mp4" type="video/mp4" fetchpriority=high>
+          <source src="assets/videos/hero-reel.mp4" type="video/mp4" />
         </video>
 
         <div class="hero-bleed-scrollfade" aria-hidden="true"></div>
@@ -155,7 +233,7 @@
           Video Production &amp; Digital Marketing for Central Florida Businesses
         </h1>
 
-        <ul class="hero-bleed-services" aria-label="Services">
+        <ul class="hero-bleed-services" aria-label="Core services">
           <li>TV &amp; Online Commercials</li>
           <li>Business &amp; Training Videos</li>
           <li>Event Videography &amp; Livestreams</li>
@@ -165,132 +243,108 @@
     </section>
 
     <!-- BRANDS / AUTO-GLIDING LOGO MARQUEE -->
-    <section class="section brands" aria-labelledby="brands-title">
+    <section class="section brands" aria-labelledby="brands-title" data-reveal>
       <div class="container">
         <h2 id="brands-title" class="brands-title">Brands that trust us</h2>
       </div>
 
-      <div class="brands-marquee" aria-label="Brands that trust us">
+      <div class="brands-marquee" aria-label="Client logos">
         <div class="brands-track">
           <a href="https://bchmechanical.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/bch-mechanical.webp" alt="BCH Mechanical logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/bch-mechanical.webp" alt="BCH Mechanical" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
-
           <a href="https://bloomtvnetwork.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/bloom-tv.webp" alt="Bloom TV logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/bloom-tv.webp" alt="Bloom TV" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
-
           <a href="https://busybeelaser.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/busy-bee-logo.webp" alt="Busy Bee Engraving logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/busy-bee-logo.webp" alt="Busy Bee Engraving" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
-
           <a href="https://www.hungryhowies.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/charlie-and-alis-hungry-howies-logo.webp" alt="Hungry Howie’s logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/charlie-and-alis-hungry-howies-logo.webp" alt="Hungry Howie's" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
-
           <a href="https://choochoolawnequipment.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/choo-choo-lawn-equiptment.webp" alt="Choo Choo Lawn Equipment logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/choo-choo-lawn-equiptment.webp" alt="Choo Choo Lawn Equipment" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
-
           <a href="https://www.compasscharter.org" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/compass-charter-logo.webp" alt="Compass Charter Academy logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/compass-charter-logo.webp" alt="Compass Charter Academy" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
-
           <a href="https://dinosaurworld.com/florida/" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/dinosaur-world-logo.webp" alt="Dinosaur World Florida logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/dinosaur-world-logo.webp" alt="Dinosaur World Florida" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
-
           <a href="https://kincaidalarm.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/kincaid-alarm.webp" alt="Kincaid Alarm logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/kincaid-alarm.webp" alt="Kincaid Alarm" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
-
           <a href="https://kincaidelectric.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/kincaid-electrical-logo-black.webp" alt="Kincaid Electrical logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/kincaid-electrical-logo-black.webp" alt="Kincaid Electrical" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
-
           <a href="https://led62.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/lumi.webp" alt="Lumi by LED62 logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/lumi.webp" alt="Lumi by LED62" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
-
           <a href="https://www.navigatoracademyvalrico.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/navigator-academy.webp" alt="Navigator Academy logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/navigator-academy.webp" alt="Navigator Academy" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
-
           <a href="https://www.plantcity.org" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/plant-city-chamber-of-commerce.webp" alt="Plant City Chamber of Commerce logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/plant-city-chamber-of-commerce.webp" alt="Plant City Chamber of Commerce" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
-
           <a href="https://www.facebook.com/SantaSweets" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/santa-sweets.webp" alt="Santa Sweets logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/santa-sweets.webp" alt="Santa Sweets" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
-
           <a href="https://www.walmart.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/walmart.webp" alt="Walmart logo" class="brand-logo-img" loading="lazy" decoding="async">
+            <img src="assets/logos/brands-who-trust-us/walmart.webp" alt="Walmart" class="brand-logo-img" loading="lazy" decoding="async" />
           </a>
 
-          <!-- SET 2 (duplicates for seamless loop, aria-hidden) -->
-          <a href="https://bchmechanical.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/bch-mechanical.webp" alt="BCH Mechanical logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://bloomtvnetwork.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/bloom-tv.webp" alt="Bloom TV logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://busybeelaser.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/busy-bee-logo.webp" alt="Busy Bee Engraving logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://www.hungryhowies.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/charlie-and-alis-hungry-howies-logo.webp" alt="Hungry Howie’s logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://choochoolawnequipment.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/choo-choo-lawn-equiptment.webp" alt="Choo Choo Lawn Equipment logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://www.compasscharter.org" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/compass-charter-logo.webp" alt="Compass Charter Academy logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://dinosaurworld.com/florida/" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/dinosaur-world-logo.webp" alt="Dinosaur World Florida logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://kincaidalarm.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/kincaid-alarm.webp" alt="Kincaid Alarm logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://kincaidelectric.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/kincaid-electrical-logo-black.webp" alt="Kincaid Electrical logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://led62.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/lumi.webp" alt="Lumi by LED62 logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://www.navigatoracademyvalrico.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/navigator-academy.webp" alt="Navigator Academy logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://www.plantcity.org" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/plant-city-chamber-of-commerce.webp" alt="Plant City Chamber of Commerce logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://www.facebook.com/SantaSweets" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/santa-sweets.webp" alt="Santa Sweets logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
-
-          <a href="https://www.walmart.com" target="_blank" rel="noopener">
-            <img src="assets/logos/brands-who-trust-us/walmart.webp" alt="Walmart logo" class="brand-logo-img" loading="lazy" decoding="async">
-          </a>
+          <!-- SET 2 (seamless loop – hidden from assistive tech) -->
+          <div aria-hidden="true" style="display:contents">
+            <a href="https://bchmechanical.com" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/bch-mechanical.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://bloomtvnetwork.com" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/bloom-tv.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://busybeelaser.com" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/busy-bee-logo.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://www.hungryhowies.com" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/charlie-and-alis-hungry-howies-logo.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://choochoolawnequipment.com" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/choo-choo-lawn-equiptment.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://www.compasscharter.org" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/compass-charter-logo.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://dinosaurworld.com/florida/" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/dinosaur-world-logo.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://kincaidalarm.com" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/kincaid-alarm.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://kincaidelectric.com" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/kincaid-electrical-logo-black.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://led62.com" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/lumi.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://www.navigatoracademyvalrico.com" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/navigator-academy.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://www.plantcity.org" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/plant-city-chamber-of-commerce.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://www.facebook.com/SantaSweets" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/santa-sweets.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://www.walmart.com" target="_blank" rel="noopener" tabindex="-1">
+              <img src="assets/logos/brands-who-trust-us/walmart.webp" alt="" class="brand-logo-img" loading="lazy" decoding="async" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Commercial Videos -->
     <section class="section fullscale" aria-labelledby="commercial-title">
-      <div class="container pitch-grid">
+      <div class="container pitch-grid" data-reveal>
         <div class="pitch-text">
           <h2 id="commercial-title">Commercial Videos That Help You Get More Customers</h2>
           <p>
@@ -300,27 +354,26 @@
           <p>
             Want your commercial seen on TV or streaming? We can help with placement on local cable and popular streaming platforms.
           </p>
-
           <a href="#contact" class="btn btn-primary">Get in Touch</a>
         </div>
 
         <div class="pitch-media">
-          <img src="assets/img/video-gear.webp" alt="Video production equipment" class="pitch-image" loading="lazy" decoding="async">
+          <img src="assets/img/video-gear.webp" alt="Professional video production camera and lighting equipment at Premium Media's Plant City studio" class="pitch-image" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>
 
     <!-- Business Video -->
     <section class="section business-video" aria-labelledby="business-video-title">
-      <div class="container pitch-grid">
+      <div class="container pitch-grid" data-reveal>
         <div class="pitch-media">
           <img
             src="assets/img/interview.webp"
-            alt="A videographer filming an interview"
+            alt="Videographer filming a professional interview for a corporate training video"
             class="pitch-image"
             loading="lazy"
             decoding="async"
-          >
+          />
         </div>
 
         <div class="pitch-text">
@@ -340,12 +393,12 @@
     <!-- WHY CHOOSE / SERVICES OVERVIEW -->
     <section class="section why" aria-labelledby="why-title">
       <div class="container">
-        <h2 id="why-title" class="why-title">Why Choose Premium Media</h2>
-        <p class="why-subtitle">
+        <h2 id="why-title" class="why-title" data-reveal>Why Choose Premium Media</h2>
+        <p class="why-subtitle" data-reveal>
           A local team delivering high-quality video and marketing without the agency hassle.
         </p>
 
-        <div class="card-grid why-grid">
+        <div class="card-grid why-grid" data-stagger>
           <a href="videography-production.html" class="why-card-link">
             <article class="card why-card">
               <h3>Videography &amp; Production</h3>
@@ -379,7 +432,7 @@
 
     <!-- LOCAL SERVICE AREAS (SEO section) -->
     <section class="section local-service-areas" aria-labelledby="service-areas-title">
-      <div class="container">
+      <div class="container" data-reveal>
         <h2 id="service-areas-title">Serving Plant City, Tampa, Lakeland &amp; Central Florida</h2>
         <p>
           Premium Media is a video production company based in Plant City, Florida. We work with local businesses,
@@ -397,94 +450,64 @@
         </ul>
 
         <p class="local-cta">
-          Looking for a reliable video production company for commercials, business videos, or event coverage? We’re here to help.
+          Looking for a reliable video production company for commercials, business videos, or event coverage? We're here to help.
         </p>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="section section-contrast contact-section" aria-labelledby="contact-title">
-      <div class="container contact-grid">
+      <div class="container contact-grid" data-reveal>
         <div class="contact-content">
-          <h2 id="contact-title">Let’s Talk About Your Project</h2>
+          <h2 id="contact-title">Let's Talk About Your Project</h2>
           <p>
             Need a commercial, business video, event coverage, or help with your website and marketing?
-            Tell us what you’re working on and we’ll walk you through the next steps.
+            Tell us what you're working on and we'll walk you through the next steps.
           </p>
 
           <p id="required-note" class="form-note">Fields marked with * are required.</p>
 
           <form
-          class="contact-form"
-          name="about-contact"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          action="/thank-you.html"
-          aria-describedby="required-note"
-        >
-          <!-- REQUIRED for Netlify -->
-          <input type="hidden" name="form-name" value="about-contact">
+            class="contact-form"
+            name="homepage-contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/thank-you.html"
+            aria-describedby="required-note"
+          >
+            <!-- REQUIRED for Netlify -->
+            <input type="hidden" name="form-name" value="homepage-contact" />
 
-          <!-- Honeypot field (invisible to users, catches bots) -->
-          <p class="visually-hidden">
-            <label>
-              Don’t fill this out:
-              <input name="bot-field" />
-            </label>
-          </p>
+            <!-- Honeypot -->
+            <p class="visually-hidden">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
 
-          <div class="form-row">
-            <label>
-              First name*
-              <input
-                type="text"
-                name="firstName"
-                required
-                aria-required="true"
-                autocomplete="given-name"
-              >
-            </label>
+            <div class="form-row">
+              <label>
+                First name*
+                <input type="text" name="firstName" required aria-required="true" autocomplete="given-name" />
+              </label>
+              <label>
+                Last name*
+                <input type="text" name="lastName" required aria-required="true" autocomplete="family-name" />
+              </label>
+            </div>
 
-            <label>
-              Last name*
-              <input
-                type="text"
-                name="lastName"
-                required
-                aria-required="true"
-                autocomplete="family-name"
-              >
-            </label>
-          </div>
+            <div class="form-row">
+              <label>
+                Email*
+                <input type="email" name="email" required aria-required="true" autocomplete="email" />
+              </label>
+              <label>
+                Phone*
+                <input type="tel" name="phone" required aria-required="true" autocomplete="tel" inputmode="tel" />
+              </label>
+            </div>
 
-          <div class="form-row">
-            <label>
-              Email*
-              <input
-                type="email"
-                name="email"
-                required
-                aria-required="true"
-                autocomplete="email"
-              >
-            </label>
-
-            <label>
-              Phone*
-              <input
-                type="tel"
-                name="phone"
-                required
-                aria-required="true"
-                autocomplete="tel"
-                inputmode="tel"
-              >
-            </label>
-          </div>
-
-          <label class="full">
-              Tell us about what services you’re looking for*
+            <label class="full">
+              Tell us about what services you're looking for*
               <textarea
                 id="services"
                 name="services"
@@ -495,12 +518,12 @@
               ></textarea>
             </label>
 
-          <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </form>
         </div>
 
         <div class="contact-media">
-          <img src="assets/img/studio.webp" alt="A person working at a desk in a studio" class="contact-image" loading="lazy" decoding="async">
+          <img src="assets/img/studio.webp" alt="Premium Media production studio workspace in Plant City, Florida" class="contact-image" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>
@@ -511,8 +534,8 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-logo">
-        <a href="index.html" aria-label="Premium Media home">
-          <img src="assets/logos/premium-media-logo-white.webp" alt="Premium Media logo" width="320" height="150" loading="lazy" decoding="async">
+        <a href="/" aria-label="Premium Media home">
+          <img src="assets/logos/premium-media-logo-white.webp" alt="Premium Media logo" width="320" height="150" loading="lazy" decoding="async" />
         </a>
       </div>
 
@@ -520,65 +543,65 @@
         <p><a href="mailto:dallas@premiummediafl.com">dallas@premiummediafl.com</a></p>
         <p><a href="tel:+18135825576">(813) 582-5576</a></p>
         <p>
-          1003 S Alexander St. Suite 7<br>
-          Plant City, FL 33563<br>
+          1003 S Alexander St. Suite 7<br />
+          Plant City, FL 33563
         </p>
       </div>
 
       <div class="footer-social" aria-label="Social media links">
-        <a
-          href="https://www.facebook.com/premiummediatampa"
-          aria-label="Premium Media on Facebook"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://www.facebook.com/premiummediatampa" aria-label="Premium Media on Facebook" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
             <path d="M22 12a10 10 0 1 0-11.56 9.88v-7H8v-3h2.44V9.5A3.4 3.4 0 0 1 14.1 5.75c1 0 2.05.18 2.05.18v2.26h-1.16a1.33 1.33 0 0 0-1.5 1.44V11H16l-.4 3h-2.11v7A10 10 0 0 0 22 12z"/>
           </svg>
         </a>
-
-        <a
-          href="https://www.instagram.com/premiummediafl/"
-          aria-label="Premium Media on Instagram"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://www.instagram.com/premiummediafl/" aria-label="Premium Media on Instagram" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
             <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.51 5.51 0 0 0 12 7.5zm0 2A3.5 3.5 0 1 1 8.5 13 3.5 3.5 0 0 1 12 9.5zm5.75-2.9a1.25 1.25 0 1 0 1.25 1.25 1.25 1.25 0 0 0-1.25-1.25z"/>
           </svg>
         </a>
-
-        <a
-          href="https://youtube.com/@premiummedia-gj8de?si=RKamxJbUV27YUifF"
-          aria-label="Premium Media on YouTube"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://youtube.com/@premiummedia-gj8de?si=RKamxJbUV27YUifF" aria-label="Premium Media on YouTube" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
             <path d="M21.8 8.001a3 3 0 0 0-2.12-2.12C17.9 5.4 12 5.4 12 5.4s-5.9 0-7.68.48A3 3 0 0 0 2.2 8c-.48 1.78-.48 4-.48 4s0 2.22.48 4a3 3 0 0 0 2.12 2.12c1.78.48 7.68.48 7.68.48s5.9 0 7.68-.48A3 3 0 0 0 21.8 16c.48-1.78.48-4 .48-4s0-2.22-.48-4zM10 15.5v-7l6 3.5-6 3.5z"/>
           </svg>
         </a>
       </div>
 
-
       <div class="footer-divider"></div>
 
       <div class="footer-bottom footer-bottom--split">
-  <span>
-    © <span id="year"></span> Premium Media. All rights reserved.
-  </span>
-
-  <a href="/intern-application.html" class="footer-intern-link">
-    Intern Application
-  </a>
-</div>
-
+        <span>&copy; <span id="year"></span> Premium Media. All rights reserved.</span>
+        <a href="/intern-application.html" class="footer-intern-link">Intern Application</a>
+      </div>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  <!-- Reveal animation observer -->
+  <script>
+  (function () {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    document.querySelectorAll("[data-reveal], [data-stagger]").forEach((el) => {
+      observer.observe(el);
+    });
+  })();
+  </script>
+
   <script src="js/main.js" defer></script>
 </body>
 </html>
