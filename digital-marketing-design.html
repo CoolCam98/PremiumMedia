@@ -84,18 +84,19 @@
   </header>
 
   <main id="main">
-    <section class="section section-contrast page-hero" aria-labelledby="dm-hero-title" data-reveal>
+    <section class="section section-contrast page-hero" aria-labelledby="dm-hero-title">
       <div class="container page-hero-inner">
         <h1 id="dm-hero-title" class="page-hero-title">Digital Marketing &amp; Web Design for Local Businesses</h1>
-        <p class="page-hero-subtitle">We help businesses in Plant City, Tampa, and Lakeland get found online with a clean website, better Google visibility, and content that looks professional.</p>
+        <p class="page-hero-subtitle">If your website is outdated, hard to find on Google, or just doesn't look like you anymore — we can help. We work with local businesses who want to look professional online without overcomplicating things.</p>
       </div>
     </section>
 
     <section class="section" aria-labelledby="webdesign-title">
-      <div class="container pitch-grid" data-reveal>
+      <div class="container pitch-grid">
         <div class="pitch-text">
-          <h2 id="webdesign-title">Web Design That's Simple &amp; Effective</h2>
-          <p>Your website should load fast, look good on mobile, and make it easy for customers to call or request a quote. We build modern sites that are easy to use and built for local search.</p>
+          <h2 id="webdesign-title">A Website That Actually Works for You</h2>
+          <p>Your website should make it easy for people to understand what you do, trust you, and take the next step — whether that's calling, filling out a form, or booking an appointment. That's it. We don't overcomplicate it.</p>
+          <p>We build clean, mobile-friendly sites that load fast and show up in local search. If you're not sure what your site needs, we'll look at it with you and tell you straight up what's working and what's not.</p>
           <ul class="content-list">
             <li>Mobile-friendly website design</li>
             <li>Clear calls-to-action (call, form, booking)</li>
@@ -112,30 +113,30 @@
 
     <section class="section section-contrast" aria-labelledby="services-title">
       <div class="container content-narrow">
-        <h2 id="services-title" class="why-title" data-reveal>Marketing Support That Makes Sense</h2>
-        <p class="why-subtitle content-wide" data-reveal>If you don't need a huge agency plan, this is for you. We focus on what helps most local businesses: show up on Google, look legit online, and stay consistent.</p>
-        <div class="card-grid" data-stagger>
+        <h2 id="services-title" class="why-title">Marketing Help Without the Agency Overhead</h2>
+        <p class="why-subtitle content-wide">You don't need a 12-month contract or a huge retainer. You need someone who understands local businesses and can help you show up where it counts — Google, social media, and your own website.</p>
+        <div class="card-grid">
           <article class="card">
             <h3>Local SEO</h3>
-            <p>Clean page titles, service pages, and location keywords so you show up for the searches that matter.</p>
+            <p>We make sure your site has the right page titles, service pages, and location info so that when someone in your area searches for what you do, you actually show up.</p>
           </article>
           <article class="card">
             <h3>Social Media Content</h3>
-            <p>Simple, professional posts that match your brand and help customers trust you.</p>
+            <p>Consistent, professional posts that match your brand. We help you stay active online without it becoming another thing on your to-do list.</p>
           </article>
           <article class="card">
             <h3>Branding &amp; Design</h3>
-            <p>Logos, graphics, and marketing pieces that keep your business looking consistent.</p>
+            <p>Logos, graphics, and marketing materials that look like they came from the same business. If your brand feels scattered, we can help pull it together.</p>
           </article>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section contact-section" aria-labelledby="contact-title">
-      <div class="container contact-grid" data-reveal>
+      <div class="container contact-grid">
         <div class="contact-content">
-          <h2 id="contact-title">Start a Marketing Project</h2>
-          <p>Tell us what you want to improve. We'll follow up with next steps and a simple plan.</p>
+          <h2 id="contact-title">Know something needs to change but not sure what?</h2>
+          <p>That's where most of our clients start. Tell us what's bugging you — your website, your Google presence, your social media, whatever — and we'll tell you what we'd actually recommend. No obligation.</p>
           <p id="required-note" class="form-note">Fields marked with * are required.</p>
           <form class="contact-form" name="marketing-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" aria-describedby="required-note">
             <input type="hidden" name="form-name" value="marketing-contact" />
@@ -148,8 +149,8 @@
               <label>Email* <input type="email" name="email" required aria-required="true" autocomplete="email" /></label>
               <label>Phone* <input type="tel" name="phone" required aria-required="true" autocomplete="tel" inputmode="tel" /></label>
             </div>
-            <label class="full">Tell us about your marketing needs*
-              <textarea id="services" name="services" rows="4" required aria-required="true" placeholder="Example: a new website, SEO help, social media content, branding, or something else"></textarea>
+            <label class="full">What's going on with your business?*
+              <textarea id="services" name="services" rows="4" required aria-required="true" placeholder="Example: my website is outdated, I'm not showing up on Google, I need help with social media, I'm not sure what I need — all good, just tell us"></textarea>
             </label>
             <button class="btn btn-primary" type="submit">Submit</button>
           </form>
@@ -181,10 +182,8 @@
       </div>
     </div>
   </footer>
+
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <script>
-  (function(){if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;const o=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add("is-visible");o.unobserve(e.target)}})},{threshold:.12,rootMargin:"0px 0px -40px 0px"});document.querySelectorAll("[data-reveal],[data-stagger]").forEach(e=>o.observe(e))})();
-  </script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
