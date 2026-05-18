@@ -80,19 +80,21 @@
     lightbox.setAttribute("aria-modal", "true");
     lightbox.setAttribute("aria-label", "Image preview");
 
+    const isOpen = () => lightbox.classList.contains("is-open");
+
     const open = (imgEl) => {
       lastFocusedEl = document.activeElement;
 
       lightboxImg.src = imgEl.currentSrc || imgEl.src;
       lightboxImg.alt = imgEl.alt || "Expanded image";
-      lightbox.style.display = "flex";
+      lightbox.classList.add("is-open");
 
       lightbox.focus();
       document.body.classList.add("lightbox-open");
     };
 
     const close = () => {
-      lightbox.style.display = "none";
+      lightbox.classList.remove("is-open");
       lightboxImg.src = "";
       document.body.classList.remove("lightbox-open");
 
@@ -108,7 +110,7 @@
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && lightbox.style.display === "flex") close();
+      if (e.key === "Escape" && isOpen()) close();
     });
   };
 
@@ -118,4 +120,3 @@
     initLightbox();
   });
 })();
-

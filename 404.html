@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Google Analytics (GA4) -->
+  <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P70PKHJE37"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -14,12 +14,21 @@
   <title>Page Not Found | Premium Media</title>
   <meta name="description" content="The page you're looking for couldn't be found." />
   <meta name="robots" content="noindex, follow" />
+  <meta name="geo.region" content="US-FL" />
+  <meta name="geo.placename" content="Plant City" />
+  <meta name="geo.position" content="28.0106;-82.1193" />
+  <meta name="ICBM" content="28.0106, -82.1193" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Questrial&display=swap" />
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
       <div class="nav-left">
@@ -28,16 +37,19 @@
         </a>
         <ul class="nav-links nav-links--desktop">
           <li><a href="/">Home</a></li>
-          <li><a href="/videography-production.html">Videography &amp; Production</a></li>
-          <li><a href="/digital-marketing-design.html">Digital Marketing &amp; Design</a></li>
+          <li><a href="/videography-production.html">Video &amp; Production</a></li>
+          <li><a href="/digital-marketing-design.html">Digital Marketing</a></li>
           <li><a href="/photography-events.html">Photography</a></li>
+          <li><a href="/blog.html">Blog</a></li>
           <li><a href="/about.html">About</a></li>
         </ul>
       </div>
       <div class="nav-actions">
         <a class="btn btn-primary nav-cta" href="/#contact">Talk to us</a>
         <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-          <span class="nav-toggle__bar" aria-hidden="true"></span><span class="nav-toggle__bar" aria-hidden="true"></span><span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
         </button>
       </div>
       <div class="mobile-menu" id="mobile-menu" hidden>
@@ -45,9 +57,10 @@
           <button class="mobile-menu__close" type="button" aria-label="Close menu">&times;</button>
           <ul class="nav-links nav-links--mobile">
             <li><a href="/">Home</a></li>
-            <li><a href="/videography-production.html">Videography &amp; Production</a></li>
-            <li><a href="/digital-marketing-design.html">Digital Marketing &amp; Design</a></li>
+            <li><a href="/videography-production.html">Video &amp; Production</a></li>
+            <li><a href="/digital-marketing-design.html">Digital Marketing</a></li>
             <li><a href="/photography-events.html">Photography</a></li>
+            <li><a href="/blog.html">Blog</a></li>
             <li><a href="/about.html">About</a></li>
           </ul>
           <a class="btn btn-primary mobile-menu__cta" href="/#contact">Talk to us</a>
@@ -55,15 +68,37 @@
       </div>
     </nav>
   </header>
-  <main class="section">
-    <div class="container" style="max-width:760px;">
+
+  <main id="main" class="section">
+    <div class="container content-narrow">
+      <p class="article-meta">Error 404</p>
       <h1>Page not found</h1>
-      <p>Sorry — the page you're looking for doesn't exist or may have moved.</p>
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.25rem;">
-        <a class="btn btn-primary" href="/">Back to homepage</a>
+      <p>Sorry — the page you're looking for doesn't exist or may have moved. Here's where you can go instead:</p>
+      <div class="service-card-grid">
+        <a class="service-card" href="/">
+          <h3>Homepage</h3>
+          <p>Start over from the top — an overview of everything Premium Media does.</p>
+          <span class="service-card__more">Go home</span>
+        </a>
+        <a class="service-card" href="/videography-production.html">
+          <h3>Video Production</h3>
+          <p>Commercials, training videos, event coverage, and livestreaming.</p>
+          <span class="service-card__more">See video services</span>
+        </a>
+        <a class="service-card" href="/digital-marketing-design.html">
+          <h3>Digital Marketing</h3>
+          <p>Web design, local SEO, social media, and branding.</p>
+          <span class="service-card__more">See marketing services</span>
+        </a>
+        <a class="service-card" href="/blog.html">
+          <h3>Blog</h3>
+          <p>Local marketing tips for Plant City and Central Florida businesses.</p>
+          <span class="service-card__more">Read the blog</span>
+        </a>
       </div>
     </div>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-logo"><a href="/" aria-label="Premium Media home"><img src="/assets/logos/premium-media-logo-white.webp" alt="Premium Media logo" width="320" height="150" loading="lazy" decoding="async" /></a></div>

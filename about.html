@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Google Analytics (GA4) -->
+  <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P70PKHJE37"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,8 +15,6 @@
   <meta name="description" content="Premium Media is a Plant City based video production, marketing, and photography team serving Tampa, Lakeland, and Central Florida." />
   <link rel="canonical" href="https://www.premiummediafl.com/about.html" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-
-  <!-- FIX: OG was copy-pasted from digital marketing page — now correct for About -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Premium Media FL" />
@@ -27,20 +25,18 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="The Premium Media team in Plant City, Florida" />
-
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About Premium Media | Plant City Video &amp; Marketing Team" />
   <meta name="twitter:description" content="A local video production, web design, and photography team in Plant City, FL serving Central Florida." />
   <meta name="twitter:image" content="https://www.premiummediafl.com/assets/images/og-premium-media.jpg" />
-
   <meta name="geo.region" content="US-FL" />
   <meta name="geo.placename" content="Plant City" />
   <meta name="geo.position" content="28.0106;-82.1193" />
   <meta name="ICBM" content="28.0106, -82.1193" />
-
-  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Questrial&display=swap" />
@@ -59,24 +55,38 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.premiummediafl.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.premiummediafl.com/about.html" }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
       <div class="nav-left">
         <a class="logo" href="/" aria-label="Premium Media home"><img src="assets/logos/premium-media-logo.webp" alt="Premium Media logo" width="260" height="65" decoding="async" /></a>
         <ul class="nav-links nav-links--desktop">
           <li><a href="/">Home</a></li>
-          <li><a href="videography-production.html">Videography &amp; Production</a></li>
-          <li><a href="digital-marketing-design.html">Digital Marketing &amp; Design</a></li>
+          <li><a href="videography-production.html">Video &amp; Production</a></li>
+          <li><a href="digital-marketing-design.html">Digital Marketing</a></li>
           <li><a href="photography-events.html">Photography</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="about.html" aria-current="page">About</a></li>
         </ul>
       </div>
       <div class="nav-actions">
         <a class="btn btn-primary nav-cta" href="#contact">Talk to us</a>
         <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-          <span class="nav-toggle__bar" aria-hidden="true"></span><span class="nav-toggle__bar" aria-hidden="true"></span><span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
         </button>
       </div>
       <div class="mobile-menu" id="mobile-menu" hidden>
@@ -84,9 +94,10 @@
           <button class="mobile-menu__close" type="button" aria-label="Close menu">&times;</button>
           <ul class="nav-links nav-links--mobile">
             <li><a href="/">Home</a></li>
-            <li><a href="videography-production.html">Videography &amp; Production</a></li>
-            <li><a href="digital-marketing-design.html">Digital Marketing &amp; Design</a></li>
+            <li><a href="videography-production.html">Video &amp; Production</a></li>
+            <li><a href="digital-marketing-design.html">Digital Marketing</a></li>
             <li><a href="photography-events.html">Photography</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
           <a class="btn btn-primary mobile-menu__cta" href="#contact">Talk to us</a>
@@ -95,7 +106,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main">
     <section class="section section-contrast page-hero" aria-labelledby="about-hero-title">
       <div class="container page-hero-inner">
         <h1 id="about-hero-title" class="page-hero-title">A Local Video, Marketing &amp; Photography Team in Plant City</h1>
@@ -141,15 +152,15 @@
       <div class="container content-narrow">
         <h2 id="different-title" class="why-title">How We Work</h2>
         <p class="why-subtitle">No surprises, no upsells, no disappearing after the deposit clears.</p>
-        <div style="display:grid; gap:var(--space-4); grid-template-columns:1.1fr 0.9fr; margin-top:var(--space-3);">
+        <div class="split-2col">
           <article class="card">
             <h3>Straight talk, every time</h3>
             <p>We won't push you into a package you don't need. We look at where your business is right now, what you're trying to do, and what will actually move the needle.</p>
             <p>If something doesn't make sense for you, we'll say so — even if it means we make less money. That's just how we operate.</p>
           </article>
           <div>
-            <h3 style="margin-bottom:0.6rem;">People usually reach out when they:</h3>
-            <ul style="margin:0; padding-left:1.1rem; line-height:1.8;">
+            <h3 class="split-heading-tight">People usually reach out when they:</h3>
+            <ul class="split-stack-list">
               <li>Know they need help but aren't sure where to start</li>
               <li>Want to work with real people, not a faceless agency</li>
               <li>Are tired of paying for stuff that doesn't work</li>
