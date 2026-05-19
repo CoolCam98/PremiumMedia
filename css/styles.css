@@ -1170,7 +1170,7 @@ body.lightbox-open { overflow: hidden; }
   border-radius: 4px;
 }
 .nav-parent__caret {
-  width: 0.5rem; height: 0.5rem;
+  width: 0.8rem; height: 0.8rem;
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
   transform: rotate(45deg) translateY(-1px);
