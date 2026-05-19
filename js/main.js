@@ -114,9 +114,66 @@
     });
   };
 
+  const initNavDropdowns = () => {
+    // Desktop: click/keyboard toggle on parent caret buttons
+    const items = document.querySelectorAll(".nav-item--has-menu");
+    items.forEach((item) => {
+      const toggle = item.querySelector(".nav-parent__caret-btn");
+      if (!toggle) return;
+      const setOpen = (open) => {
+        item.dataset.open = open ? "true" : "false";
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      };
+      toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        const isOpen = item.dataset.open === "true";
+        items.forEach((other) => {
+          if (other !== item) {
+            other.dataset.open = "false";
+            const t = other.querySelector(".nav-parent__caret-btn");
+            if (t) t.setAttribute("aria-expanded", "false");
+          }
+        });
+        setOpen(!isOpen);
+      });
+    });
+    // Close any open desktop dropdown on outside click or Escape
+    document.addEventListener("click", (e) => {
+      items.forEach((item) => {
+        if (!item.contains(e.target)) {
+          item.dataset.open = "false";
+          const t = item.querySelector(".nav-parent__caret-btn");
+          if (t) t.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        items.forEach((item) => {
+          item.dataset.open = "false";
+          const t = item.querySelector(".nav-parent__caret-btn");
+          if (t) t.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
+
+    // Mobile: collapsible groups
+    const groups = document.querySelectorAll(".m-group__toggle");
+    groups.forEach((toggle) => {
+      const submenu = document.getElementById(toggle.getAttribute("aria-controls"));
+      if (!submenu) return;
+      toggle.addEventListener("click", () => {
+        const isOpen = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
+        submenu.classList.toggle("is-open", !isOpen);
+      });
+    });
+  };
+
   onReady(() => {
     initMobileNav();
     initActiveNav();
+    initNavDropdowns();
     initLightbox();
   });
 })();
