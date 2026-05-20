@@ -171,9 +171,22 @@
   };
 
   onReady(() => {
-    initMobileNav();
-    initActiveNav();
-    initNavDropdowns();
-    initLightbox();
+  initMobileNav();
+  initActiveNav();
+  initNavDropdowns();
+  initLightbox();
+  initFormValidationStyles();
+});
+
+  const initFormValidationStyles = () => {
+  document.querySelectorAll(".contact-form").forEach((form) => {
+    form.addEventListener("submit", () => {
+      form.classList.add("was-validated");
+    });
+    // Also catch the case where the browser blocks submit due to invalid fields
+    form.addEventListener("invalid", () => {
+      form.classList.add("was-validated");
+    }, true);
   });
+};
 })();

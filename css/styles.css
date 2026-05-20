@@ -632,6 +632,21 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
 }
 .contact-form .btn { margin-top: 0.6rem; width: fit-content; }
 .contact-form--wide { max-width: 100%; }
+
+/* Show invalid required fields in red — only after the user has tried to submit */
+.contact-form.was-validated input:invalid,
+.contact-form.was-validated select:invalid,
+.contact-form.was-validated textarea:invalid {
+  border-color: #c0392b;
+  background-color: #fdecea;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+.contact-form.was-validated input:invalid:focus,
+.contact-form.was-validated select:invalid:focus,
+.contact-form.was-validated textarea:invalid:focus {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.25);
+}
  
 /* Checkbox group — used for multi-select form fields like role selection */
 .checkbox-group {
