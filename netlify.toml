@@ -1,8 +1,2 @@
 [build]
   publish = "."
-
-# Make sure your /thank-you/ folder route works
-[[redirects]]
-  from = "/thank-you"
-  to = "/thank-you/"
-  status = 301

@@ -1,2 +1,46 @@
 http://premiummediafl.com/* https://www.premiummediafl.com/:splat 301!
 https://premiummediafl.com/* https://www.premiummediafl.com/:splat 301!
+
+# Clean URLs: redirect old .html links (SEO equity) to extension-less paths,
+# then rewrite the clean paths to the underlying .html files so they serve content.
+/about.html /about 301
+/branding-design.html /branding-design 301
+/commercials.html /commercials 301
+/contractor-application.html /contractor-application 301
+/contractor-thank-you.html /contractor-thank-you 301
+/digital-marketing-design.html /digital-marketing-design 301
+/google-business-profile-management-tampa.html /google-business-profile-management-tampa 301
+/google-business-profile-optimization-tampa.html /google-business-profile-optimization-tampa 301
+/intern-application.html /intern-application 301
+/intern-thank-you.html /intern-thank-you 301
+/livestreaming.html /livestreaming 301
+/local-seo.html /local-seo 301
+/photography-events.html /photography-events 301
+/social-media.html /social-media 301
+/stylist-submission.html /stylist-submission 301
+/thank-you.html /thank-you 301
+/training-videos.html /training-videos 301
+/video-production-tampa.html /video-production-tampa 301
+/videography-production.html /videography-production 301
+/web-design.html /web-design 301
+
+/about /about.html 200
+/branding-design /branding-design.html 200
+/commercials /commercials.html 200
+/contractor-application /contractor-application.html 200
+/contractor-thank-you /contractor-thank-you.html 200
+/digital-marketing-design /digital-marketing-design.html 200
+/google-business-profile-management-tampa /google-business-profile-management-tampa.html 200
+/google-business-profile-optimization-tampa /google-business-profile-optimization-tampa.html 200
+/intern-application /intern-application.html 200
+/intern-thank-you /intern-thank-you.html 200
+/livestreaming /livestreaming.html 200
+/local-seo /local-seo.html 200
+/photography-events /photography-events.html 200
+/social-media /social-media.html 200
+/stylist-submission /stylist-submission.html 200
+/thank-you /thank-you.html 200
+/training-videos /training-videos.html 200
+/video-production-tampa /video-production-tampa.html 200
+/videography-production /videography-production.html 200
+/web-design /web-design.html 200
