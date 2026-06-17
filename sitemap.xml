@@ -63,6 +63,22 @@
     <priority>0.80</priority>
   </url>
 
+  <!-- AI/answer-engine targeted pages (not in main nav) -->
+  <url>
+    <loc>https://www.premiummediafl.com/video-production-tampa.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://www.premiummediafl.com/google-business-profile-optimization-tampa.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://www.premiummediafl.com/google-business-profile-management-tampa.html</loc>
+    <priority>0.70</priority>
+  </url>
+
   <!-- Intern application -->
   <url>
     <loc>https://www.premiummediafl.com/intern-application.html</loc>
