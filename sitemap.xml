@@ -19,6 +19,41 @@
   </url>
 
   <url>
+    <loc>https://www.premiummediafl.com/commercials.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.premiummediafl.com/training-videos.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.premiummediafl.com/livestreaming.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.premiummediafl.com/web-design.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.premiummediafl.com/local-seo.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.premiummediafl.com/social-media.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.premiummediafl.com/branding-design.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
     <loc>https://www.premiummediafl.com/photography-events.html</loc>
     <priority>0.85</priority>
   </url>
@@ -31,6 +66,12 @@
   <!-- Intern application -->
   <url>
     <loc>https://www.premiummediafl.com/intern-application.html</loc>
+    <priority>0.60</priority>
+  </url>
+
+  <!-- Contractor application -->
+  <url>
+    <loc>https://www.premiummediafl.com/contractor-application.html</loc>
     <priority>0.60</priority>
   </url>
 

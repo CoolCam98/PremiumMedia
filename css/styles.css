@@ -628,7 +628,6 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
 .contact-form textarea:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(93, 58, 141, 0.1);
-  outline: none;
 }
 .contact-form .btn { margin-top: 0.6rem; width: fit-content; }
 .contact-form--wide { max-width: 100%; }
