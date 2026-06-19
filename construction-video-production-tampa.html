@@ -4,12 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P70PKHJE37"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag("js", new Date());
-      gtag("config", "G-P70PKHJE37");
+      if (/(^|\.)premiummediafl\.com$/.test(location.hostname)) {
+        var gaScript = document.createElement("script");
+        gaScript.async = true;
+        gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-P70PKHJE37";
+        document.head.appendChild(gaScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "G-P70PKHJE37");
+      }
     </script>
   <title>Construction Video Production in Tampa, FL | Premium Media</title>
   <meta name="description" content="Construction video production in Tampa, FL: how it works, what it costs, and how progress, drone, safety, and marketing video gets produced for construction and infrastructure projects." />
