@@ -4,12 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P70PKHJE37"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag("js", new Date());
-      gtag("config", "G-P70PKHJE37");
+      if (/(^|\.)premiummediafl\.com$/.test(location.hostname)) {
+        var gaScript = document.createElement("script");
+        gaScript.async = true;
+        gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-P70PKHJE37";
+        document.head.appendChild(gaScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "G-P70PKHJE37");
+      }
     </script>
   <title>Freelance Video Editor &amp; Shooter — Plant City | Premium Media</title>
   <meta name="description" content="Hiring 1099 independent contractors in Plant City, FL — freelance video editors and shooters/videographers for Central Florida projects. Apply to work with Premium Media." />
