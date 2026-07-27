@@ -124,6 +124,10 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
 .section { padding: var(--space-5) 0; }
 .section-contrast { background: var(--bg-soft); }
 
+@media (max-width: 820px) {
+  .section { padding: var(--space-4) 0; }
+}
+
 .card-grid {
   display: grid;
   gap: var(--space-3);
@@ -598,6 +602,9 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
   /* Force text above image on mobile when source order is image-first */
   .business-video .pitch-text { text-align: left; align-items: flex-start; order: -1; }
   .business-video .pitch-media { order: 0; }
+  /* Normalize mixed source-photo aspect ratios to one consistent frame */
+  .pitch-media { aspect-ratio: 4 / 3; }
+  .pitch-image { height: 100%; object-fit: cover; }
 }
 
 /* =========================================================
@@ -743,6 +750,8 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
   .contact-form { margin: 0 auto; }
   .contact-form .form-row { grid-template-columns: 1fr; }
   .contact-form .btn { margin-left: auto; margin-right: auto; }
+  .contact-media { aspect-ratio: 4 / 3; }
+  .contact-image { height: 100%; }
 }
 
 /* =========================================================
@@ -998,7 +1007,10 @@ body.lightbox-open { overflow: hidden; }
   object-fit: cover;
   box-shadow: var(--shadow);
 }
-@media (max-width: 900px) { .video-split { grid-template-columns: 1fr; } }
+@media (max-width: 900px) {
+  .video-split { grid-template-columns: 1fr; }
+  .video-split-media img { aspect-ratio: 4 / 3; height: 100%; }
+}
 
 .video-band { background: #050506; color: #ffffff; padding: var(--space-4) 0; }
 .video-band .why-title, .video-band h2, .video-band h3 { color: #ffffff; }
@@ -1049,7 +1061,10 @@ body.lightbox-open { overflow: hidden; }
   gap: var(--space-4);
   align-items: stretch;
 }
-@media (max-width: 900px) { .video-two-up { grid-template-columns: 1fr; } }
+@media (max-width: 900px) {
+  .video-two-up { grid-template-columns: 1fr; }
+  .video-block-media img { aspect-ratio: 4 / 3; height: 100%; }
+}
 
 .video-block {
   background: #fff;
