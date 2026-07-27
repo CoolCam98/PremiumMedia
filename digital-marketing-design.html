@@ -30,16 +30,12 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Premium Media web design and digital marketing in Central Florida" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Web Design &amp; Digital Marketing, Plant City FL | Premium Media" />
-  <meta name="twitter:description" content="Websites, local SEO, social media, and branding for Central Florida businesses." />
-  <meta name="twitter:image" content="https://www.premiummediafl.com/assets/images/og-premium-media.jpg" />
   <meta name="geo.region" content="US-FL" />
   <meta name="geo.placename" content="Plant City" />
   <meta name="geo.position" content="28.0106;-82.1193" />
   <meta name="ICBM" content="28.0106, -82.1193" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -94,7 +90,6 @@
             <li><a href="commercials">Commercials</a></li>
             <li><a href="training-videos">Training Videos</a></li>
             <li><a href="livestreaming">Livestreaming</a></li>
-            <li><a href="construction-video-production">Construction Video</a></li>
             </ul>
           </li>
           <li class="nav-item--has-menu" data-open="false">
@@ -112,11 +107,23 @@
             </ul>
           </li>
           <li><a href="photography-events">Photography</a></li>
-          <li><a href="about">About</a></li>
+          <li class="nav-item--has-menu" data-open="false">
+            <span class="nav-parent">
+              <a href="about">About</a>
+              <button class="nav-parent__caret-btn" type="button" aria-expanded="false" aria-label="Open About menu">
+                <span class="nav-parent__caret" aria-hidden="true"></span>
+              </button>
+            </span>
+            <ul class="nav-submenu">
+            <li><a href="case-studies">Case Studies</a></li>
+            <li><a href="blog">Blog</a></li>
+            <li><a href="contact">Contact</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
       <div class="nav-actions">
-        <a class="btn btn-primary nav-cta" href="#contact">Talk to us</a>
+        <a class="btn btn-primary nav-cta" href="contact">Talk to us</a>
         <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
           <span class="nav-toggle__bar" aria-hidden="true"></span>
           <span class="nav-toggle__bar" aria-hidden="true"></span>
@@ -138,7 +145,6 @@
                 <li><a href="commercials">Commercials</a></li>
                 <li><a href="training-videos">Training Videos</a></li>
                 <li><a href="livestreaming">Livestreaming</a></li>
-                <li><a href="construction-video-production">Construction Video</a></li>
               </ul>
             </li>
             <li class="m-group">
@@ -155,9 +161,20 @@
               </ul>
             </li>
             <li><a href="photography-events">Photography</a></li>
-            <li><a href="about">About</a></li>
+            <li class="m-group">
+              <button class="m-group__toggle" type="button" aria-expanded="false" aria-controls="m-sub-about">
+                About
+                <span class="m-group__caret" aria-hidden="true"></span>
+              </button>
+              <ul class="m-submenu" id="m-sub-about">
+                <li><a class="m-parent-link" href="about">About</a></li>
+                <li><a href="case-studies">Case Studies</a></li>
+                <li><a href="blog">Blog</a></li>
+                <li><a href="contact">Contact</a></li>
+              </ul>
+            </li>
           </ul>
-          <a class="btn btn-primary mobile-menu__cta" href="#contact">Talk to us</a>
+          <a class="btn btn-primary mobile-menu__cta" href="contact">Talk to us</a>
         </div>
       </div>
     </nav>
@@ -215,6 +232,22 @@
       </div>
     </section>
 
+    <section class="section local-service-areas" aria-labelledby="service-areas-title">
+      <div class="container">
+        <h2 id="service-areas-title">Digital Marketing Across Central Florida</h2>
+        <p>We handle web design, local SEO, social media, and branding for businesses throughout Hillsborough and Polk County.</p>
+        <ul class="service-area-list" aria-label="Service areas">
+          <li>Plant City</li>
+          <li>Tampa</li>
+          <li>Lakeland</li>
+          <li>Brandon</li>
+          <li>Valrico &amp; Riverview</li>
+          <li>Wesley Chapel</li>
+          <li>Polk County &amp; Greater Central Florida</li>
+        </ul>
+      </div>
+    </section>
+
     <section id="contact" class="section contact-section" aria-labelledby="contact-title">
       <div class="container contact-grid">
         <div class="contact-content">
@@ -261,7 +294,13 @@
       <div class="footer-divider"></div>
       <div class="footer-bottom footer-bottom--split">
         <span>&copy; <span id="year"></span> Premium Media. All rights reserved.</span>
-        <a href="/intern-application" class="footer-intern-link">Intern Application</a>
+        <span class="footer-links">
+          <a href="/case-studies" class="footer-extra-link">Case Studies</a>
+          <a href="/blog" class="footer-extra-link">Blog</a>
+          <a href="/contact" class="footer-extra-link">Contact</a>
+          <a href="/intern-application" class="footer-extra-link">Intern Application</a>
+          <a href="/contractor-application" class="footer-extra-link">Contractor Application</a>
+        </span>
       </div>
     </div>
   </footer>
