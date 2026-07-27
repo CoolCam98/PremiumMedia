@@ -226,6 +226,49 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
 }
 .section-inline-links a:hover { color: var(--accent-hover); opacity: 1; }
 
+/* Labeled dot-separated tag row (e.g. "Industries We Serve") */
+.tag-row-block { padding-top: var(--space-2); padding-bottom: var(--space-2); }
+.tag-row__eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+}
+.tag-row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 0.5rem;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+.tag-row li { display: flex; align-items: center; }
+.tag-row li:not(:last-child)::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--line);
+  margin: 0 0.85rem;
+  flex-shrink: 0;
+}
+.tag-row a {
+  color: var(--accent);
+  font-weight: 700;
+}
+.tag-row a:hover { color: var(--accent-hover); opacity: 1; }
+.tag-row__more { font-style: italic; }
+@media (max-width: 640px) {
+  .tag-row { font-size: 0.95rem; }
+  .tag-row li:not(:last-child)::after { margin: 0 0.55rem; }
+}
+
 /* =========================================================
    NAVIGATION — frosted glass
 ========================================================= */
