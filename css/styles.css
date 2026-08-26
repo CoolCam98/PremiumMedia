@@ -599,9 +599,11 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
 
 @media (max-width: 900px) {
   .pitch-grid { grid-template-columns: 1fr; }
-  /* Force text above image on mobile when source order is image-first */
-  .business-video .pitch-text { text-align: left; align-items: flex-start; order: -1; }
-  .business-video .pitch-media { order: 0; }
+  /* Always show the photo before the copy on mobile, regardless of source order,
+     so stacked sections alternate photo/text evenly instead of stacking two photos together */
+  .pitch-media { order: -1; }
+  .pitch-text { order: 0; }
+  .business-video .pitch-text { text-align: left; align-items: flex-start; }
   /* Normalize mixed source-photo aspect ratios to one consistent frame */
   .pitch-media { aspect-ratio: 4 / 3; }
   .pitch-image { height: 100%; object-fit: cover; }
@@ -1011,6 +1013,10 @@ body.lightbox-open { overflow: hidden; }
   .video-split { grid-template-columns: 1fr; }
   .video-split-media img { aspect-ratio: 4 / 3; height: 100%; }
 }
+@media (max-width: 620px) {
+  /* Photo before copy once the split-auto drone block stacks to one column */
+  .split-narrow .video-split-media { order: -1; }
+}
 
 .video-band { background: #050506; color: #ffffff; padding: var(--space-4) 0; }
 .video-band .why-title, .video-band h2, .video-band h3 { color: #ffffff; }
@@ -1023,7 +1029,10 @@ body.lightbox-open { overflow: hidden; }
   align-items: flex-start;
 }
 .video-band-grid ul { margin: 0.4rem 0 0; padding-left: 1.1rem; line-height: 1.8; }
-@media (max-width: 900px) { .video-band-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) {
+  .video-band-grid { grid-template-columns: 1fr; }
+  .video-band-grid .pitch-media { order: -1; }
+}
 
 .video-usp-grid {
   display: grid;
