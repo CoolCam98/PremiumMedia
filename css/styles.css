@@ -448,7 +448,7 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
 .hero-bleed-lede {
   color: rgba(255, 255, 255, 0.7);
   margin: 0.6rem 0 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
   max-width: 520px;
   line-height: 1.55;
 }
@@ -558,7 +558,7 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
   align-items: center;
 }
 .pitch-text p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   max-width: 520px;
   margin-bottom: var(--space-3);
 }
@@ -629,7 +629,7 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
 ========================================================= */
 .local-service-areas { position: relative; }
 .local-service-areas p {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.65;
   max-width: 720px;
 }
@@ -670,7 +670,7 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.2rem;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .contact-form input:focus,
@@ -679,7 +679,7 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(93, 58, 141, 0.1);
 }
-.contact-form .btn { margin-top: 0.6rem; width: fit-content; }
+.contact-form .btn { margin-top: 0.6rem; width: fit-content; font-size: 1rem; }
 .contact-form--wide { max-width: 100%; }
 
 /* Show invalid required fields in red — only after the user has tried to submit */
