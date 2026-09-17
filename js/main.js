@@ -170,12 +170,39 @@
     });
   };
 
+  const initPromoBadge = () => {
+    const badge = document.querySelector(".promo-badge");
+    const closeBtn = document.querySelector(".promo-badge__close");
+    if (!badge || !closeBtn) return;
+
+    const storageKey = "promoBadgeDismissed";
+    try {
+      if (sessionStorage.getItem(storageKey) === "true") {
+        badge.hidden = true;
+        return;
+      }
+    } catch (e) {
+      /* storage unavailable, badge stays visible */
+    }
+
+    closeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      badge.hidden = true;
+      try {
+        sessionStorage.setItem(storageKey, "true");
+      } catch (e) {
+        /* ignore */
+      }
+    });
+  };
+
   onReady(() => {
   initMobileNav();
   initActiveNav();
   initNavDropdowns();
   initLightbox();
   initFormValidationStyles();
+  initPromoBadge();
 });
 
   const initFormValidationStyles = () => {
