@@ -549,6 +549,54 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
 }
 
 /* =========================================================
+   PLATFORM LOGO SCROLLER (streaming/OTT platforms strip)
+========================================================= */
+.platform-marquee-label {
+  text-align: center;
+  font-weight: 700;
+  color: var(--text);
+  margin: var(--space-3) 0 var(--space-2);
+}
+.platform-marquee { position: relative; width: 100%; overflow: hidden; }
+.platform-marquee::before,
+.platform-marquee::after {
+  content: "";
+  position: absolute; top: 0;
+  width: clamp(30px, 6vw, 100px); height: 100%;
+  z-index: 2; pointer-events: none;
+}
+.platform-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.platform-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.platform-track {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  width: max-content;
+  padding: 0 clamp(1rem, 2vw, 2rem);
+  animation: brands-scroll 28s linear infinite;
+  will-change: transform;
+  contain: content;
+}
+.platform-marquee:hover .platform-track { animation-play-state: paused; }
+.platform-logo-img {
+  height: clamp(26px, 3.2vw, 38px);
+  width: auto; opacity: 0.8; filter: none;
+  flex: 0 0 auto;
+  transition: opacity 0.25s ease;
+}
+.platform-logo-img:hover { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .platform-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
+  .platform-marquee::before, .platform-marquee::after { display: none; }
+}
+
+/* =========================================================
    PITCH / TWO-COLUMN SECTIONS
 ========================================================= */
 .pitch-grid {
