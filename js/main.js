@@ -196,15 +196,6 @@
     });
   };
 
-  onReady(() => {
-  initMobileNav();
-  initActiveNav();
-  initNavDropdowns();
-  initLightbox();
-  initFormValidationStyles();
-  initPromoBadge();
-});
-
   const initFormValidationStyles = () => {
   document.querySelectorAll(".contact-form").forEach((form) => {
     form.addEventListener("submit", () => {
@@ -216,4 +207,13 @@
     }, true);
   });
 };
+
+  onReady(() => {
+  initMobileNav();
+  initActiveNav();
+  initNavDropdowns();
+  initLightbox();
+  initFormValidationStyles();
+  initPromoBadge();
+});
 })();
