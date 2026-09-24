@@ -1,49 +1,104 @@
 (() => {
   /* =========================================================
      PRICING CONFIG — edit prices here.
-     Each price array lines up with TIERS (smallest home first).
+     Every price array lines up with TIERS (smallest home first).
+     A null price means "custom quote" at that size.
   ========================================================= */
   const TIERS = [
-    { max: 1500, label: "Up to 1,500 sq ft" },
-    { max: 2500, label: "1,501 – 2,500 sq ft" },
-    { max: 3500, label: "2,501 – 3,500 sq ft" },
-    { max: 5000, label: "3,501 – 5,000 sq ft" },
-    { max: 5999, label: "5,001 – 5,999 sq ft" },
+    { max: 1000, label: "Up to 1,000 sq ft", photos: "15–20" },
+    { max: 2000, label: "1,001 – 2,000 sq ft", photos: "30–35" },
+    { max: 3000, label: "2,001 – 3,000 sq ft", photos: "45–50" },
+    { max: 4000, label: "3,001 – 4,000 sq ft", photos: "60–65" },
+    { max: 5000, label: "4,001 – 5,000 sq ft", photos: "75–80" },
   ];
-  const QUOTE_AT = 6000; // slider value at/above this shows "custom quote"
-  const MINIMUM_ORDER = 99;
+  const QUOTE_ABOVE = 5000; // homes larger than this are priced by quote
 
-  // perPhoto: true → priced per edited photo, with a quantity stepper.
-  const SERVICES = [
-    { id: "photos", name: "HDR Photography", desc: "Interior + exterior, Blue Sky Guarantee", prices: [139, 169, 209, 259, 319] },
-    { id: "drone", name: "Drone Photos", desc: "Aerial stills of the home and lot", prices: [99, 99, 99, 99, 99] },
-    { id: "droneVideo", name: "Drone Video", desc: "Aerial clips, add to any video", prices: [149, 149, 149, 149, 149] },
-    { id: "video", name: "Listing Video", desc: "Walkthrough video with music", prices: [299, 329, 369, 419, 479] },
-    { id: "tour", name: "3D Virtual Tour", desc: "Interactive walkthrough", prices: [149, 179, 219, 269, 329] },
-    { id: "floorplan", name: "2D Floor Plan", desc: "Labeled rooms and dimensions", prices: [69, 89, 109, 139, 169] },
-    { id: "twilight", name: "Virtual Twilight", desc: "Per photo", prices: [29, 29, 29, 29, 29], perPhoto: true },
-    { id: "staging", name: "Virtual Staging", desc: "Per photo", prices: [35, 35, 35, 35, 35], perPhoto: true },
-  ];
+  const flat = (n) => [n, n, n, n, n];
 
-  const PACKAGES = [
+  // group: services in the same group replace each other (pick one).
+  // perPhoto / perUnit: priced per item, with a quantity stepper.
+  const SERVICE_GROUPS = [
     {
-      name: "Essentials",
-      tagline: "Clean, bright photos to get the listing live.",
-      prices: [149, 179, 219, 269, 329],
-      includes: { photos: 1, twilight: 1 },
+      title: "Photography",
+      note: "Pick one",
+      items: [
+        { id: "hdrFp", name: "HDR Photography + 2D Floor Plan", desc: "Hand-blended HDR photos with a basic floor plan", prices: [165, 185, 210, 230, 270], group: "photo", photoCount: true },
+        { id: "hdr", name: "HDR Photography", desc: "Hand-blended HDR interior and exterior photos", prices: [150, 170, 190, 210, 245], group: "photo", photoCount: true },
+        { id: "sdr", name: "SDR Photography", desc: "Approx. 15–35 color-corrected photos, a budget option for rentals", prices: [125, 125, 125, 175, 175], group: "photo" },
+        { id: "editorial", name: "Editorial Finish Add-On", desc: "A second, warmer magazine-style edit of your interiors", prices: [75, 150, 225, 300, 375] },
+      ],
     },
     {
-      name: "Signature",
-      tagline: "The package most agents book.",
-      prices: [279, 319, 369, 429, 499],
-      includes: { photos: 1, drone: 1, floorplan: 1, twilight: 1 },
+      title: "Drone",
+      items: [
+        { id: "aerial5", name: "5 Aerial Photos", desc: "Includes property pins and boundary outlines", prices: flat(110), group: "aerial" },
+        { id: "aerial10", name: "10 Aerial Photos", desc: "Includes property pins and boundary outlines", prices: flat(150), group: "aerial" },
+        { id: "aerialVideo", name: "Aerial-Only Video (30 sec)", desc: "Branded and MLS-compliant versions", prices: flat(200) },
+      ],
+    },
+    {
+      title: "Video",
+      items: [
+        { id: "walkthrough", name: "Video Walkthrough (45 sec)", desc: "One-take vertical or horizontal video for social media", prices: [130, 130, 130, null, null] },
+        { id: "video", name: "Listing Video", desc: "Fast-paced edit with drone shots, branded and unbranded versions", prices: [275, 275, 305, 330, 385] },
+        { id: "cinematic", name: "Cinematic Video", desc: "60–120 sec golden-hour film plus a social teaser, agent on camera included", prices: [null, null, 600, 650, 725] },
+        { id: "agentCam", name: "Agent-on-Camera Add-On", desc: "Scripting help, coaching, and synced captions", prices: flat(75) },
+        { id: "aiFx", name: "AI Effects & Transitions", desc: "Per effect, or $150 for the full package", prices: flat(35), perUnit: "effect" },
+        { id: "carousel", name: "Video Carousel", desc: "Five slow-motion clips for social posts", prices: flat(39), perUnit: "set" },
+      ],
+    },
+    {
+      title: "3D Tours & Floor Plans",
+      items: [
+        { id: "zillow", name: "Zillow 3D Home Tour", desc: "Gets the 3D Tour badge and priority placement on Zillow", prices: [125, 125, 125, 175, 175] },
+        { id: "matterport", name: "Matterport 3D Tour", desc: "Interactive walkthrough buyers can explore anytime", prices: [160, 195, 230, 270, 305] },
+        { id: "fp", name: "Basic 2D Floor Plan", desc: "Unbranded, with approximate room dimensions", prices: flat(50), group: "plan" },
+        { id: "fpSchematic", name: "Schematic 2D Floor Plan", desc: "Adds fixed furniture and door swings", prices: flat(50), group: "plan" },
+        { id: "fp3d", name: "3D Floor Plan", desc: "Matches the home's furniture and finishes, includes 2D schematic", prices: flat(100), group: "plan" },
+      ],
+    },
+    {
+      title: "Twilight & Editing",
+      items: [
+        { id: "twilight", name: "Virtual Twilight", desc: "Daytime exterior turned into a dusk photo", prices: flat(10), perUnit: "photo" },
+        { id: "realTwilight", name: "Real Twilight Shoot", desc: "6–10 photos taken at sunset", prices: flat(200) },
+        { id: "staging", name: "Virtual Staging", desc: "Empty rooms furnished digitally", prices: flat(20), perUnit: "photo" },
+        { id: "declutter", name: "Object Removal / Decluttering", desc: "Unwanted items removed from a photo", prices: flat(5), perUnit: "photo" },
+        { id: "grass", name: "Virtual Green Grass", desc: "Brown or patchy lawns made green", prices: flat(1), perUnit: "photo" },
+      ],
+    },
+    {
+      title: "Extras",
+      items: [
+        { id: "amenities", name: "Community Amenities", desc: "6–8 photos or video of the pool, clubhouse, gates and more", prices: flat(40) },
+        { id: "website", name: "Property Website & Marketing Kit", desc: "Listing website, flyers, and social media graphics", prices: flat(29) },
+      ],
+    },
+  ];
+
+  // includes: service id → quantity. The "Save" line compares against these à la carte prices.
+  const PACKAGES = [
+    {
+      name: "Base",
+      tagline: "The industry standard: photos, drone, floor plan, and twilight.",
+      prices: [235, 235, 260, 280, 320],
+      includes: { hdr: 1, aerial5: 1, fp: 1, twilight: 1 },
+      features: ["photos", "5 Aerial Photos", "Basic 2D Floor Plan", "Virtual Twilight (1 photo)", "Blue Sky Guarantee", "-Listing Video", "-Zillow 3D Home Tour"],
+    },
+    {
+      name: "Plus Video",
+      tagline: "Everything in Base plus a listing video, ready for the MLS and Instagram.",
+      prices: [400, 440, 480, 520, 555],
+      includes: { hdr: 1, aerial5: 1, fp: 1, twilight: 1, video: 1 },
+      features: ["photos", "5 Aerial Photos", "Basic 2D Floor Plan", "Virtual Twilight (1 photo)", "Blue Sky Guarantee", "Listing Video", "-Zillow 3D Home Tour"],
       featured: true,
     },
     {
-      name: "Premier",
-      tagline: "Everything, for listings that need to stand out.",
-      prices: [699, 759, 839, 939, 1059],
-      includes: { photos: 1, drone: 1, droneVideo: 1, video: 1, tour: 1, floorplan: 1, twilight: 1 },
+      name: "Premium Video",
+      tagline: "The complete suite, with a Zillow 3D tour for priority placement.",
+      prices: [525, 565, 605, 695, 730],
+      includes: { hdr: 1, aerial5: 1, fp: 1, twilight: 1, video: 1, zillow: 1 },
+      features: ["photos", "5 Aerial Photos", "Basic 2D Floor Plan", "Virtual Twilight (1 photo)", "Blue Sky Guarantee", "Listing Video", "Zillow 3D Home Tour"],
     },
   ];
 
@@ -60,30 +115,29 @@
   const selectionField = document.querySelector("[data-selection-field]");
   if (!range || !packagesEl || !alacarteEl) return;
 
-  const money = (n) => "$" + n.toLocaleString("en-US");
-  const fmtSqft = (n) => n.toLocaleString("en-US") + (n >= QUOTE_AT ? "+" : "") + " sq ft";
+  const SERVICES = SERVICE_GROUPS.flatMap((g) => g.items);
   const byId = Object.fromEntries(SERVICES.map((s) => [s.id, s]));
   const qty = Object.fromEntries(SERVICES.map((s) => [s.id, 0]));
 
-  const tierIndex = (sqft) => {
-    const i = TIERS.findIndex((t) => sqft <= t.max);
+  const money = (n) => "$" + n.toLocaleString("en-US");
+  const sqft = () => Number(range.value);
+  const isQuote = () => sqft() > QUOTE_ABOVE;
+  const fmtSqft = (n) => (n > QUOTE_ABOVE ? "5,000+ sq ft" : n.toLocaleString("en-US") + " sq ft");
+  const tierIndex = (n) => {
+    const i = TIERS.findIndex((t) => n <= t.max);
     return i === -1 ? TIERS.length - 1 : i;
   };
-  const isQuote = () => Number(range.value) >= QUOTE_AT;
-
   const setSelection = (text) => {
     if (selectionField) selectionField.value = text;
   };
 
-  const sqftText = () => fmtSqft(Number(range.value));
-
   // ---- Package cards ----
   const renderPackages = () => {
     packagesEl.innerHTML = PACKAGES.map((p, pi) => {
-      const rows = SERVICES.map((s) => {
-        const on = Boolean(p.includes[s.id]);
-        const label = s.perPhoto && on ? `${s.name} (${p.includes[s.id]} photo)` : s.name;
-        return `<li class="${on ? "is-in" : "is-out"}"><span class="visually-hidden">${on ? "Included:" : "Not included:"}</span>${label}</li>`;
+      const rows = p.features.map((f) => {
+        const out = f.startsWith("-");
+        const label = f === "photos" ? `<span data-photo-count>Approx. ${TIERS[0].photos}</span> HDR Photos` : out ? f.slice(1) : f;
+        return `<li class="${out ? "is-out" : "is-in"}"><span class="visually-hidden">${out ? "Not included:" : "Included:"}</span>${label}</li>`;
       }).join("");
       return `
         <article class="re-package${p.featured ? " re-package--featured" : ""}">
@@ -100,41 +154,57 @@
     packagesEl.querySelectorAll("[data-pkg-book]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const p = PACKAGES[Number(btn.dataset.pkgBook)];
-        const price = isQuote() ? "custom quote" : money(p.prices[tierIndex(Number(range.value))]);
-        setSelection(`${p.name} package, ${sqftText()} (${price})`);
+        const price = isQuote() ? "custom quote" : money(p.prices[tierIndex(sqft())]);
+        setSelection(`${p.name} Package, ${fmtSqft(sqft())} (${price})`);
       });
     });
   };
 
   // ---- À la carte list ----
   const renderAlacarte = () => {
-    alacarteEl.innerHTML = SERVICES.map((s) => `
-      <li class="re-item" data-item="${s.id}">
-        <label class="re-item__main">
-          <input type="checkbox" data-check="${s.id}" />
-          <span class="re-item__text"><strong>${s.name}</strong><small>${s.desc}</small></span>
-        </label>
-        ${s.perPhoto ? `
-          <span class="re-qty" aria-label="${s.name} quantity">
-            <button type="button" data-dec="${s.id}" aria-label="Fewer ${s.name} photos">&minus;</button>
-            <span data-qty="${s.id}">0</span>
-            <button type="button" data-inc="${s.id}" aria-label="More ${s.name} photos">+</button>
-          </span>` : ""}
-        <span class="re-item__price" data-item-price="${s.id}"></span>
+    alacarteEl.innerHTML = SERVICE_GROUPS.map((g) => `
+      <li class="re-group">
+        <p class="re-group__title">${g.title}${g.note ? ` <span>${g.note}</span>` : ""}</p>
+        <ul class="re-group__items">
+          ${g.items.map((s) => `
+            <li class="re-item" data-item="${s.id}">
+              <label class="re-item__main">
+                <input type="checkbox" id="svc-${s.id}" data-check="${s.id}" />
+                <span class="re-item__text"><strong>${s.name}</strong><small data-item-desc="${s.id}">${s.desc}</small></span>
+              </label>
+              ${s.perUnit ? `
+                <span class="re-qty">
+                  <button type="button" data-dec="${s.id}" aria-label="Fewer: ${s.name}">&minus;</button>
+                  <span data-qty="${s.id}" aria-live="polite">0</span>
+                  <button type="button" data-inc="${s.id}" aria-label="More: ${s.name}">+</button>
+                </span>` : ""}
+              <span class="re-item__price" data-item-price="${s.id}"></span>
+            </li>`).join("")}
+        </ul>
       </li>`).join("");
+
+    const select = (id, n) => {
+      const s = byId[id];
+      if (n > 0 && s.group) {
+        SERVICES.forEach((o) => {
+          if (o.group === s.group && o.id !== id) qty[o.id] = 0;
+        });
+      }
+      qty[id] = n;
+    };
 
     alacarteEl.addEventListener("change", (e) => {
       const id = e.target.dataset.check;
       if (!id) return;
-      qty[id] = e.target.checked ? Math.max(1, qty[id]) : 0;
+      select(id, e.target.checked ? Math.max(1, qty[id]) : 0);
       update();
     });
     alacarteEl.addEventListener("click", (e) => {
-      const inc = e.target.dataset.inc;
-      const dec = e.target.dataset.dec;
-      if (inc) qty[inc] = Math.min(25, qty[inc] + 1);
-      if (dec) qty[dec] = Math.max(0, qty[dec] - 1);
-      if (inc || dec) update();
+      const btn = e.target.closest("button");
+      if (!btn) return;
+      if (btn.dataset.inc) select(btn.dataset.inc, Math.min(50, qty[btn.dataset.inc] + 1));
+      if (btn.dataset.dec) select(btn.dataset.dec, Math.max(0, qty[btn.dataset.dec] - 1));
+      update();
     });
   };
 
@@ -143,62 +213,67 @@
 
   // ---- Update everything for the current slider value ----
   const update = () => {
-    const sqft = Number(range.value);
-    const t = tierIndex(sqft);
+    const n = sqft();
+    const t = tierIndex(n);
     const quote = isQuote();
 
-    output.textContent = fmtSqft(sqft);
-    tierLabel.textContent = quote ? "6,000+ sq ft (custom quote)" : TIERS[t].label;
-    const pct = ((sqft - range.min) / (range.max - range.min)) * 100;
-    range.style.setProperty("--fill", pct + "%");
+    output.textContent = fmtSqft(n);
+    tierLabel.textContent = quote ? "Over 5,000 sq ft (custom quote)" : `${TIERS[t].label} · approx. ${TIERS[t].photos} photos`;
+    range.style.setProperty("--fill", ((n - range.min) / (range.max - range.min)) * 100 + "%");
 
+    packagesEl.querySelectorAll("[data-photo-count]").forEach((el) => {
+      el.textContent = quote ? "80+" : `Approx. ${TIERS[t].photos}`;
+    });
     PACKAGES.forEach((p, pi) => {
       const priceEl = packagesEl.querySelector(`[data-pkg-price="${pi}"]`);
       const saveEl = packagesEl.querySelector(`[data-pkg-save="${pi}"]`);
       if (quote) {
         priceEl.textContent = "Custom quote";
-        saveEl.textContent = "Call us for large homes";
+        saveEl.textContent = "Call us for homes over 5,000 sq ft";
         return;
       }
       priceEl.textContent = money(p.prices[t]);
       const save = alacarteSum(p.includes, t) - p.prices[t];
-      saveEl.textContent = save > 0 ? `Save ${money(save)} vs. à la carte` : "";
+      saveEl.textContent = save > 0 ? `Save ${money(save)} vs. booking separately` : "";
     });
 
     let total = 0;
+    let needsQuote = quote;
     const picked = [];
     SERVICES.forEach((s) => {
-      const n = qty[s.id];
+      const count = qty[s.id];
+      const price = quote ? null : s.prices[t];
       const row = alacarteEl.querySelector(`[data-item="${s.id}"]`);
-      row.classList.toggle("is-selected", n > 0);
-      alacarteEl.querySelector(`[data-check="${s.id}"]`).checked = n > 0;
+      row.classList.toggle("is-selected", count > 0);
+      alacarteEl.querySelector(`[data-check="${s.id}"]`).checked = count > 0;
       const qEl = alacarteEl.querySelector(`[data-qty="${s.id}"]`);
-      if (qEl) qEl.textContent = n;
-      const priceEl = alacarteEl.querySelector(`[data-item-price="${s.id}"]`);
-      priceEl.textContent = quote ? "Quote" : money(s.prices[t]) + (s.perPhoto ? "/photo" : "");
-      if (n > 0) {
-        total += s.prices[t] * n;
-        picked.push(s.perPhoto ? `${s.name} x${n}` : s.name);
+      if (qEl) qEl.textContent = count;
+      const desc = alacarteEl.querySelector(`[data-item-desc="${s.id}"]`);
+      desc.textContent = s.photoCount && !quote ? `${s.desc} · approx. ${TIERS[t].photos} photos` : s.desc;
+      alacarteEl.querySelector(`[data-item-price="${s.id}"]`).textContent =
+        price === null ? "Quote" : money(price) + (s.perUnit ? `/${s.perUnit}` : "");
+      if (count > 0) {
+        if (price === null) needsQuote = true;
+        else total += price * count;
+        picked.push(s.perUnit ? `${s.name} x${count}` : s.name);
       }
     });
 
-    if (quote) {
-      totalEl.textContent = "Custom quote";
-      noteEl.textContent = "Homes 6,000+ sq ft are priced by quote.";
-    } else if (!picked.length) {
+    if (!picked.length) {
       totalEl.textContent = money(0);
       noteEl.textContent = "Select services to see your total.";
-    } else if (total < MINIMUM_ORDER) {
-      totalEl.textContent = money(MINIMUM_ORDER);
-      noteEl.textContent = `Services add up to ${money(total)}. Orders have a ${money(MINIMUM_ORDER)} minimum.`;
-      total = MINIMUM_ORDER;
+    } else if (needsQuote) {
+      totalEl.textContent = quote ? "Custom quote" : money(total) + "+";
+      noteEl.textContent = quote
+        ? "Homes over 5,000 sq ft are priced by quote."
+        : "One of your picks isn't offered at this size, so we'll send a custom quote for it.";
     } else {
       totalEl.textContent = money(total);
-      noteEl.textContent = `${picked.length} service${picked.length > 1 ? "s" : ""} for ${sqftText()}`;
+      noteEl.textContent = `${picked.length} service${picked.length > 1 ? "s" : ""} for ${fmtSqft(n)}`;
     }
 
     customBook.dataset.summary = picked.length
-      ? `Custom: ${picked.join(", ")}, ${sqftText()} (${quote ? "custom quote" : money(total)})`
+      ? `Custom: ${picked.join(", ")}, ${fmtSqft(n)} (${totalEl.textContent})`
       : "";
   };
 

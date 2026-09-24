@@ -1754,7 +1754,22 @@ body.menu-open { overflow: hidden; }
 .re-alacarte-title { text-align: center; margin-top: var(--space-5); font-size: var(--h2); }
 .re-alacarte-sub { text-align: center; margin-bottom: var(--space-3); }
 .re-alacarte { display: grid; grid-template-columns: 1fr 300px; gap: var(--space-3); align-items: start; }
-.re-alacarte-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+.re-alacarte-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+.re-group__title {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+.re-group__title span {
+  margin-left: 0.4rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.re-group__items { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
 .re-item {
   display: flex;
   align-items: center;
