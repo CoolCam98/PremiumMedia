@@ -347,7 +347,7 @@
       <div class="container contact-grid">
         <div class="contact-content">
           <h2 id="contact-title">Book Your Listing Shoot</h2>
-          <p>Send us the property details and we'll confirm your shoot time. Your package and square footage fill in automatically from the calculator.</p>
+          <p>Send us the property details and we'll confirm your shoot time. Your package, services and square footage fill in automatically from the calculator.</p>
           <p class="form-note">Prefer to call? Reach us at <a href="tel:+18138930360">(813) 893-0360</a>.</p>
           <form class="contact-form" name="real-estate-media-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" aria-describedby="required-note">
             <input type="hidden" name="form-name" value="real-estate-media-booking" />
@@ -362,7 +362,17 @@
               <label>Phone* <input type="tel" name="phone" required aria-required="true" autocomplete="tel" inputmode="tel" /></label>
             </div>
             <label class="full">Property address* <input type="text" name="propertyAddress" required aria-required="true" autocomplete="street-address" /></label>
-            <label class="full">Selected services <input type="text" name="selection" data-selection-field readonly /></label>
+            <div class="full re-selected">
+              <span class="re-selected__label" id="selected-services-label">Selected services</span>
+              <details class="re-selected__dropdown" aria-labelledby="selected-services-label">
+                <summary data-selected-summary>No services selected yet</summary>
+                <ul class="re-selected__list" data-selected-list>
+                  <li class="re-selected__empty">Pick a package or tick services in the price calculator above.</li>
+                </ul>
+                <p class="re-selected__total" data-selected-total></p>
+              </details>
+              <input type="hidden" name="selection" data-selection-field />
+            </div>
             <label class="full">Anything we should know?
               <textarea name="notes" rows="3" placeholder="Preferred shoot date, lockbox or gate codes, occupied or vacant..."></textarea>
             </label>

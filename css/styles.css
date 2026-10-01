@@ -1701,6 +1701,59 @@ body.menu-open { overflow: hidden; }
 .re-slider-scale { display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); }
 .re-slider-tier { margin: var(--space-2) 0 0; font-size: 1rem; text-align: center; }
 .re-slider-tier strong { color: var(--text); }
+/* Booking form: "Selected services" dropdown */
+.re-selected { display: grid; gap: 0.4rem; }
+.re-selected__dropdown { text-align: left; }
+.re-selected__label { font-weight: 600; color: var(--text); }
+.re-selected__dropdown {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+}
+.re-selected__dropdown[open] { border-color: var(--accent); }
+.re-selected__dropdown summary {
+  position: relative;
+  padding: 0.7rem 2.4rem 0.7rem 0.8rem;
+  font-size: 1.05rem;
+  cursor: pointer;
+  list-style: none;
+}
+.re-selected__dropdown summary::-webkit-details-marker { display: none; }
+.re-selected__dropdown summary::after {
+  content: "";
+  position: absolute;
+  right: 1rem; top: 50%;
+  width: 0.55rem; height: 0.55rem;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+.re-selected__dropdown[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+.re-selected__dropdown summary:focus-visible { outline: var(--focus-ring); outline-offset: 2px; border-radius: 10px; }
+.re-selected__list { list-style: none; margin: 0; padding: 0 0.8rem; border-top: 1px solid var(--line); }
+.re-selected__list li { border-bottom: 1px solid var(--line); }
+.re-selected__list li:last-child { border-bottom: 0; }
+.contact-form .re-selected__list label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+.contact-form .re-selected__list input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 1.15rem; height: 1.15rem;
+  padding: 0;
+  accent-color: var(--accent);
+}
+.re-selected__price { margin-left: auto; font-weight: 700; white-space: nowrap; }
+.re-selected__empty { padding: 0.7rem 0; color: var(--text-muted); font-size: 0.95rem; }
+.re-selected__total { margin: 0; padding: 0.6rem 0.8rem 0.8rem; border-top: 1px solid var(--line); font-size: 0.95rem; font-weight: 700; }
+.re-selected__total:empty { display: none; }
+.re-package.is-selected { outline: 3px solid var(--accent); outline-offset: 2px; }
+
 .re-slider-card--alacarte { margin-top: var(--space-3); margin-bottom: var(--space-3); }
 
 /* Package cards */

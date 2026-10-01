@@ -101,11 +101,15 @@
   const noteEl = document.querySelector("[data-custom-note]");
   const customBook = document.querySelector("[data-custom-book]");
   const selectionField = document.querySelector("[data-selection-field]");
+  const selectedSummary = document.querySelector("[data-selected-summary]");
+  const selectedList = document.querySelector("[data-selected-list]");
+  const selectedTotal = document.querySelector("[data-selected-total]");
   if (!range || !packagesEl || !alacarteEl) return;
 
   const SERVICES = SERVICE_GROUPS.flatMap((g) => g.items);
   const byId = Object.fromEntries([...SERVICES, ...PACKAGE_ONLY].map((s) => [s.id, s]));
   const qty = Object.fromEntries(SERVICES.map((s) => [s.id, 0]));
+  let selectedPkg = null; // index into PACKAGES, or null
 
   const money = (n) => "$" + n.toLocaleString("en-US");
   const sqft = () => Number(range.value);
@@ -114,9 +118,6 @@
   const tierIndex = (n) => {
     const i = TIERS.findIndex((t) => n <= t.max);
     return i === -1 ? TIERS.length - 1 : i;
-  };
-  const setSelection = (text) => {
-    if (selectionField) selectionField.value = text;
   };
 
   // ---- Package cards ----
@@ -152,11 +153,11 @@
       });
     });
 
+    // One package at a time; à la carte picks can be added on top.
     packagesEl.querySelectorAll("[data-pkg-book]").forEach((btn) => {
       btn.addEventListener("click", () => {
-        const p = PACKAGES[Number(btn.dataset.pkgBook)];
-        const price = isQuote() ? "custom quote" : money(p.prices[tierIndex(sqft())]);
-        setSelection(`${p.name} Package, ${fmtSqft(sqft())} (${price})`);
+        selectedPkg = Number(btn.dataset.pkgBook);
+        update();
       });
     });
   };
@@ -278,14 +279,67 @@
       noteEl.textContent = `${picked.length} service${picked.length > 1 ? "s" : ""} for ${fmtSqft(n)}`;
     }
 
-    customBook.dataset.summary = picked.length
-      ? `Custom: ${picked.join(", ")}, ${fmtSqft(n)} (${totalEl.textContent})`
-      : "";
+    renderSelection(t, quote);
   };
 
-  customBook.addEventListener("click", () => {
-    if (customBook.dataset.summary) setSelection(customBook.dataset.summary);
-  });
+  // ---- "Selected services" dropdown on the booking form ----
+  // Mirrors the package and à la carte picks. Unticking a line here
+  // removes it from the calculator too.
+  const renderSelection = (t, quote) => {
+    packagesEl.querySelectorAll(".re-package").forEach((card, pi) => {
+      card.classList.toggle("is-selected", pi === selectedPkg);
+    });
+    if (!selectedList) return;
+
+    const lines = [];
+    if (selectedPkg !== null) {
+      const p = PACKAGES[selectedPkg];
+      lines.push({ key: "pkg", name: `${p.name} Package`, price: quote ? null : p.prices[t] });
+    }
+    SERVICES.forEach((s) => {
+      const count = qty[s.id];
+      if (!count) return;
+      const price = quote || s.prices[t] === null ? null : s.prices[t] * count;
+      lines.push({ key: s.id, name: s.perUnit ? `${s.name} x${count}` : s.name, price });
+    });
+
+    const priceText = (p) => (p === null ? "Quote" : money(p));
+    const sum = lines.reduce((acc, l) => acc + (l.price || 0), 0);
+    const anyQuote = lines.some((l) => l.price === null);
+    const totalText = anyQuote ? (sum ? money(sum) + " + quote" : "Custom quote") : money(sum);
+
+    selectedList.innerHTML = lines.length
+      ? lines.map((l) => `
+          <li>
+            <label>
+              <input type="checkbox" checked data-unselect="${l.key}" />
+              <span>${l.name}</span>
+              <span class="re-selected__price">${priceText(l.price)}</span>
+            </label>
+          </li>`).join("")
+      : '<li class="re-selected__empty">Pick a package or tick services in the price calculator above.</li>';
+
+    selectedSummary.textContent = lines.length
+      ? lines.length === 1 ? lines[0].name : `${lines.length} services selected`
+      : "No services selected yet";
+    selectedTotal.textContent = lines.length ? `Home size: ${fmtSqft(sqft())} · Estimated total: ${totalText}` : "";
+
+    if (selectionField) {
+      selectionField.value = lines.length
+        ? `${lines.map((l) => `${l.name} (${priceText(l.price)})`).join("; ")}; Home size: ${fmtSqft(sqft())}; Estimated total: ${totalText}`
+        : "";
+    }
+  };
+
+  if (selectedList) {
+    selectedList.addEventListener("change", (e) => {
+      const key = e.target.dataset.unselect;
+      if (!key) return;
+      if (key === "pkg") selectedPkg = null;
+      else qty[key] = 0;
+      update();
+    });
+  }
 
   renderPackages();
   renderAlacarte();
