@@ -1832,8 +1832,9 @@ body.menu-open { overflow: hidden; }
   .re-package__badge { top: -10px; padding: 0.15rem 0.5rem; font-size: 0.6rem; letter-spacing: 0.03em; }
   .re-package h3 { font-size: 0.95rem; line-height: 1.2; min-height: 2.4em; }
   .re-package__tagline { display: none; }
-  .re-package__price { font-size: 1.5rem; }
-  .re-package__price .is-quote { display: block; font-size: 1.05rem; line-height: 1.2; }
+  /* Prices shrink with the screen instead of wrapping */
+  .re-package__price { font-size: clamp(1rem, 6.2vw, 1.5rem); white-space: nowrap; }
+  .re-package__price .is-quote { display: block; font-size: 1.05rem; line-height: 1.2; white-space: normal; }
   .re-package__save { min-height: 1.2em; font-size: 0.8rem; line-height: 1.2; margin-bottom: 0.5rem; }
   .re-package__save-more { display: none; }
   .re-package__list { margin-bottom: 0.75rem; padding-top: 0.5rem; }
