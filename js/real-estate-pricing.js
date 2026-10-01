@@ -219,6 +219,7 @@
     PACKAGES.forEach((p, pi) => {
       const priceEl = packagesEl.querySelector(`[data-pkg-price="${pi}"]`);
       const saveEl = packagesEl.querySelector(`[data-pkg-save="${pi}"]`);
+      priceEl.classList.toggle("is-quote", quote);
       if (quote) {
         priceEl.textContent = "Custom quote";
         saveEl.textContent = "Call us for homes over 5,000 sq ft";

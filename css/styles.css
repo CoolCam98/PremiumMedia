@@ -1707,11 +1707,13 @@ body.menu-open { overflow: hidden; }
 .re-packages {
   display: grid;
   gap: var(--space-3);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
 }
 .re-package {
   position: relative;
+  min-width: 0;
+  overflow-wrap: break-word;
   display: flex;
   flex-direction: column;
   background: var(--bg-card);
@@ -1831,6 +1833,7 @@ body.menu-open { overflow: hidden; }
   .re-package h3 { font-size: 0.95rem; line-height: 1.2; min-height: 2.4em; }
   .re-package__tagline { display: none; }
   .re-package__price { font-size: 1.5rem; }
+  .re-package__price .is-quote { display: block; font-size: 1.05rem; line-height: 1.2; }
   .re-package__save { min-height: 1.2em; font-size: 0.8rem; line-height: 1.2; margin-bottom: 0.5rem; }
   .re-package__save-more { display: none; }
   .re-package__list { margin-bottom: 0.75rem; padding-top: 0.5rem; }
