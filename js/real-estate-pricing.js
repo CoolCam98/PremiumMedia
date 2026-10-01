@@ -90,9 +90,11 @@
 
   /* ========================================================= */
 
-  const range = document.getElementById("sqft-range");
-  const output = document.getElementById("sqft-output");
-  const tierLabel = document.querySelector("[data-tier-label]");
+  // Every home-size slider on the page stays in sync with the others.
+  const ranges = [...document.querySelectorAll("[data-sqft-range]")];
+  const outputs = document.querySelectorAll("[data-sqft-output]");
+  const tierLabels = document.querySelectorAll("[data-tier-label]");
+  const range = ranges[0];
   const packagesEl = document.querySelector("[data-packages]");
   const alacarteEl = document.querySelector("[data-alacarte]");
   const totalEl = document.querySelector("[data-custom-total]");
@@ -203,9 +205,13 @@
     const t = tierIndex(n);
     const quote = isQuote();
 
-    output.textContent = fmtSqft(n);
-    tierLabel.textContent = quote ? "Over 5,000 sq ft (custom quote)" : `${TIERS[t].label} · approx. ${TIERS[t].photos} photos`;
-    range.style.setProperty("--fill", ((n - range.min) / (range.max - range.min)) * 100 + "%");
+    const tierText = quote ? "Over 5,000 sq ft (custom quote)" : `${TIERS[t].label} · approx. ${TIERS[t].photos} photos`;
+    outputs.forEach((el) => (el.textContent = fmtSqft(n)));
+    tierLabels.forEach((el) => (el.textContent = tierText));
+    ranges.forEach((r) => {
+      r.value = n;
+      r.style.setProperty("--fill", ((n - r.min) / (r.max - r.min)) * 100 + "%");
+    });
 
     packagesEl.querySelectorAll("[data-photo-count]").forEach((el) => {
       el.textContent = quote ? "80+" : `Approx. ${TIERS[t].photos}`;
@@ -269,6 +275,11 @@
 
   renderPackages();
   renderAlacarte();
-  range.addEventListener("input", update);
+  ranges.forEach((r) =>
+    r.addEventListener("input", () => {
+      range.value = r.value;
+      update();
+    })
+  );
   update();
 })();

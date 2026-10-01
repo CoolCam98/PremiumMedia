@@ -1701,6 +1701,7 @@ body.menu-open { overflow: hidden; }
 .re-slider-scale { display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); }
 .re-slider-tier { margin: var(--space-2) 0 0; font-size: 1rem; text-align: center; }
 .re-slider-tier strong { color: var(--text); }
+.re-slider-card--alacarte { margin-top: var(--space-3); margin-bottom: var(--space-3); }
 
 /* Package cards */
 .re-packages {

@@ -270,9 +270,9 @@
         <div class="re-slider-card">
           <div class="re-slider-head">
             <label for="sqft-range" class="re-slider-label">Home size</label>
-            <output id="sqft-output" for="sqft-range" class="re-slider-value" aria-live="polite">2,000 sq ft</output>
+            <output id="sqft-output" for="sqft-range" class="re-slider-value" aria-live="polite" data-sqft-output>2,000 sq ft</output>
           </div>
-          <input type="range" id="sqft-range" class="re-slider" min="700" max="5050" step="50" value="2000" aria-describedby="sqft-tier" />
+          <input type="range" id="sqft-range" class="re-slider" min="700" max="5050" step="50" value="2000" aria-describedby="sqft-tier" data-sqft-range />
           <div class="re-slider-scale" aria-hidden="true"><span>700</span><span>2,000</span><span>3,000</span><span>4,000</span><span>5,000+</span></div>
           <p id="sqft-tier" class="re-slider-tier">Pricing tier: <strong data-tier-label>1,001 – 2,000 sq ft</strong></p>
         </div>
@@ -282,6 +282,15 @@
         </div>
 
         <h3 class="re-alacarte-title">Build Your Own (&Agrave; La Carte)</h3>
+        <div class="re-slider-card re-slider-card--alacarte">
+          <div class="re-slider-head">
+            <label for="sqft-range-alacarte" class="re-slider-label">Home size</label>
+            <output for="sqft-range-alacarte" class="re-slider-value" data-sqft-output>2,000 sq ft</output>
+          </div>
+          <input type="range" id="sqft-range-alacarte" class="re-slider" min="700" max="5050" step="50" value="2000" aria-describedby="sqft-tier-alacarte" data-sqft-range />
+          <div class="re-slider-scale" aria-hidden="true"><span>700</span><span>2,000</span><span>3,000</span><span>4,000</span><span>5,000+</span></div>
+          <p id="sqft-tier-alacarte" class="re-slider-tier">Pricing tier: <strong data-tier-label>1,001 – 2,000 sq ft</strong></p>
+        </div>
         <p class="re-alacarte-sub">Only need one or two things? Tick the services you want and we'll add them up for this home size.</p>
         <div class="re-alacarte">
           <ul class="re-alacarte-list" data-alacarte></ul>
