@@ -134,10 +134,23 @@
           <p class="re-package__tagline">${p.tagline}</p>
           <p class="re-package__price"><span data-pkg-price="${pi}"></span></p>
           <p class="re-package__save" data-pkg-save="${pi}"></p>
-          <ul class="re-package__list">${rows}</ul>
-          <a href="#book" class="btn ${p.featured ? "btn-primary" : "btn-outline"} re-package__cta" data-pkg-book="${pi}">Book ${p.name}</a>
+          <ul class="re-package__list" id="pkg-list-${pi}">${rows}</ul>
+          <button type="button" class="re-package__more" data-pkg-more aria-expanded="false" aria-controls="pkg-list-0 pkg-list-1 pkg-list-2">Show more</button>
+          <a href="#book" class="btn ${p.featured ? "btn-primary" : "btn-outline"} re-package__cta" data-pkg-book="${pi}">Book<span class="re-package__cta-name"> ${p.name}</span></a>
         </article>`;
     }).join("");
+
+    // Phones: the feature lists start collapsed. One tap expands all three
+    // so the side-by-side cards stay level.
+    packagesEl.querySelectorAll("[data-pkg-more]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const open = packagesEl.classList.toggle("is-expanded");
+        packagesEl.querySelectorAll("[data-pkg-more]").forEach((b) => {
+          b.textContent = open ? "Show less" : "Show more";
+          b.setAttribute("aria-expanded", String(open));
+        });
+      });
+    });
 
     packagesEl.querySelectorAll("[data-pkg-book]").forEach((btn) => {
       btn.addEventListener("click", () => {
