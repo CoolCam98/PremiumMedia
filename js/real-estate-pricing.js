@@ -226,7 +226,7 @@
       }
       priceEl.textContent = money(p.prices[t]);
       const save = alacarteSum(p.includes, t) - p.prices[t];
-      saveEl.textContent = save > 0 ? `Save ${money(save)} vs. booking separately` : "";
+      saveEl.innerHTML = save > 0 ? `Save ${money(save)}<span class="re-package__save-more"> vs. booking separately</span>` : "";
     });
 
     let total = 0;

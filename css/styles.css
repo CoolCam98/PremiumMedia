@@ -1816,11 +1816,27 @@ body.menu-open { overflow: hidden; }
 .re-fineprint { margin-top: var(--space-3); text-align: center; font-size: 0.92rem; }
 
 @media (max-width: 900px) {
-  .re-packages { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; gap: var(--space-4); }
+  /* Keep the three packages side by side so prices visibly change while sliding */
+  .re-packages { gap: var(--space-2); }
+  .re-package { padding: var(--space-3) var(--space-2) var(--space-2); }
+  .re-package h3 { font-size: 1.15rem; }
   .re-alacarte { grid-template-columns: 1fr; }
   .re-total { position: static; }
 }
 @media (max-width: 600px) {
+  .re-packages { gap: 0.5rem; }
+  .re-package { padding: 1.4rem 0.6rem 0.75rem; border-radius: calc(var(--radius) * 0.75); }
+  .re-package--featured { box-shadow: 0 8px 20px rgba(93, 58, 141, 0.18); }
+  .re-package__badge { top: -10px; padding: 0.15rem 0.5rem; font-size: 0.6rem; letter-spacing: 0.03em; }
+  .re-package h3 { font-size: 0.95rem; line-height: 1.2; min-height: 2.4em; }
+  .re-package__tagline { display: none; }
+  .re-package__price { font-size: 1.5rem; }
+  .re-package__save { min-height: 1.2em; font-size: 0.8rem; line-height: 1.2; margin-bottom: 0.5rem; }
+  .re-package__save-more { display: none; }
+  .re-package__list { margin-bottom: 0.75rem; padding-top: 0.5rem; }
+  .re-package__list li { padding: 0.2rem 0 0.2rem 0.9rem; font-size: 0.72rem; line-height: 1.25; }
+  .re-package__list li::before { top: 0.2rem; }
+  .re-package__cta { padding: 0.55rem 0.25rem; font-size: 0.75rem; line-height: 1.2; text-align: center; }
   .re-slider-card { padding: var(--space-3) var(--space-2); }
   .re-slider-scale span:nth-child(2), .re-slider-scale span:nth-child(4) { display: none; }
   .re-item { flex-wrap: wrap; }
