@@ -20,9 +20,7 @@
   const SERVICE_GROUPS = [
     {
       title: "Photography",
-      note: "Pick one",
       items: [
-        { id: "hdrFp", name: "HDR Photography + 2D Floor Plan", desc: "Hand-blended HDR photos with a basic floor plan", prices: [165, 185, 210, 230, 270], group: "photo", photoCount: true },
         { id: "hdr", name: "HDR Photography", desc: "Hand-blended HDR interior and exterior photos", prices: [150, 170, 190, 210, 245], group: "photo", photoCount: true },
       ],
     },
