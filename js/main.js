@@ -208,6 +208,57 @@
   });
 };
 
+  const initTestimonials = () => {
+    const carousel = document.querySelector(".testimonials-carousel");
+    if (!carousel) return;
+    const slides = carousel.querySelectorAll(".testimonial");
+    const dots = carousel.querySelectorAll(".testimonials-dot");
+    const prev = carousel.querySelector(".testimonials-prev");
+    const next = carousel.querySelector(".testimonials-next");
+    if (slides.length < 2) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const interval = 7000;
+    let current = 0;
+    let timer = null;
+
+    const show = (index) => {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const active = i === current;
+        slide.classList.toggle("is-active", active);
+        slide.setAttribute("aria-hidden", active ? "false" : "true");
+      });
+      dots.forEach((dot, i) => {
+        if (i === current) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+    };
+
+    const stop = () => {
+      clearInterval(timer);
+      timer = null;
+    };
+    const start = () => {
+      if (reduceMotion || timer) return;
+      timer = setInterval(() => show(current + 1), interval);
+    };
+
+    prev.addEventListener("click", () => show(current - 1));
+    next.addEventListener("click", () => show(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener("click", () => show(i)));
+
+    // Pause while the visitor is reading or using the controls
+    carousel.addEventListener("mouseenter", stop);
+    carousel.addEventListener("mouseleave", start);
+    carousel.addEventListener("focusin", stop);
+    carousel.addEventListener("focusout", (e) => {
+      if (!carousel.contains(e.relatedTarget)) start();
+    });
+
+    start();
+  };
+
   onReady(() => {
   initMobileNav();
   initActiveNav();
@@ -215,5 +266,6 @@
   initLightbox();
   initFormValidationStyles();
   initPromoBadge();
+  initTestimonials();
 });
 })();
