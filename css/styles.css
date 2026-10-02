@@ -1952,3 +1952,4 @@ body.menu-open { overflow: hidden; }
 }
 .local-office__nap--center { text-align: center; margin: var(--space-3) 0; }
 .local-office__cta { text-align: center; margin: 0; }
+.video-gallery--single { grid-template-columns: minmax(0, 760px); justify-content: center; }
