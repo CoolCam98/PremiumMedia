@@ -259,6 +259,36 @@
     start();
   };
 
+  // Count a quote request only when a visitor really submitted a quote form,
+  // not whenever something (often a bot) loads /thank-you directly.
+  const initLeadTracking = () => {
+    const storageKey = "leadFormSubmitted";
+
+    document.querySelectorAll("form[data-lead-form]").forEach((form) => {
+      form.addEventListener("submit", () => {
+        try {
+          sessionStorage.setItem(storageKey, form.getAttribute("name") || "unknown");
+        } catch (e) {
+          /* storage unavailable, submission just won't be tracked */
+        }
+      });
+    });
+
+    const path = window.location.pathname.replace(/\.html$/, "").replace(/\/$/, "");
+    if (path !== "/thank-you") return;
+
+    let formName = null;
+    try {
+      formName = sessionStorage.getItem(storageKey);
+      sessionStorage.removeItem(storageKey);
+    } catch (e) {
+      return;
+    }
+    if (formName && typeof window.gtag === "function") {
+      window.gtag("event", "generate_lead", { form_name: formName });
+    }
+  };
+
   onReady(() => {
   initMobileNav();
   initActiveNav();
@@ -267,5 +297,6 @@
   initFormValidationStyles();
   initPromoBadge();
   initTestimonials();
+  initLeadTracking();
 });
 })();

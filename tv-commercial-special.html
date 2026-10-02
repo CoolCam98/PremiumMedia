@@ -352,7 +352,7 @@
           <h2 id="contact-title">Get Started on Our $999 Commercial Special</h2>
           <p>Message us with a bit about your business or call us directly — either way, we'll get your commercial on the calendar.</p>
           <p class="form-note">Prefer to call? Reach us at <a href="tel:+18138930360">(813) 893-0360</a>.</p>
-          <form class="contact-form" name="tv-commercial-special-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" aria-describedby="required-note">
+          <form class="contact-form" name="tv-commercial-special-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" data-lead-form action="/thank-you" aria-describedby="required-note">
             <input type="hidden" name="form-name" value="tv-commercial-special-contact" />
             <input type="hidden" name="offer" value="$999 TV-Ready Commercial Special" />
             <p class="visually-hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
@@ -368,6 +368,7 @@
             <label class="full">Tell us about your business*
               <textarea id="services" name="services" rows="4" required aria-required="true" placeholder="Example: I'm interested in the $999 commercial. Here's a bit about my business and what I'd like the commercial to say..."></textarea>
             </label>
+            <div class="form-recaptcha" data-netlify-recaptcha="true"></div>
             <button class="btn btn-primary" type="submit">Submit</button>
           </form>
         </div>

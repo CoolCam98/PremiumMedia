@@ -139,7 +139,7 @@
         name="stylist-profile"
         method="POST"
         data-netlify="true"
-        netlify-honeypot="bot-field"
+        netlify-honeypot="bot-field" data-netlify-recaptcha="true"
         action="/thank-you"
         enctype="multipart/form-data"
         aria-describedby="required-note"
@@ -176,6 +176,7 @@
           <p>"I'm a cut and style specialist with a passion for bold transformations. Whether you want a fresh pixie or just a clean-up, I'll make sure you leave feeling like yourself — just better. I'm also great with curly and textured hair."</p>
         </div>
 
+        <div class="form-recaptcha" data-netlify-recaptcha="true"></div>
         <button class="btn btn-primary" type="submit">Submit my profile</button>
       </form>
     </div>

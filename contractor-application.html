@@ -247,7 +247,7 @@
         <p class="why-subtitle">We read every application. If your work is a fit, we'll reach out to talk.</p>
         <p id="required-note" class="form-note">Fields marked with * are required.</p>
 
-        <form class="contact-form contact-form--wide" name="contractor-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contractor-thank-you" enctype="multipart/form-data" aria-describedby="required-note">
+        <form class="contact-form contact-form--wide" name="contractor-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" action="/contractor-thank-you" enctype="multipart/form-data" aria-describedby="required-note">
           <input type="hidden" name="form-name" value="contractor-application" />
           <p class="visually-hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
@@ -315,6 +315,7 @@
           </label>
 
           <input type="hidden" name="source" value="contractor-application-page" />
+          <div class="form-recaptcha" data-netlify-recaptcha="true"></div>
           <button class="btn btn-primary" type="submit">Submit application</button>
         </form>
       </div>

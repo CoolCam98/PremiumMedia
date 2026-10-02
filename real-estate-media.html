@@ -349,7 +349,7 @@
           <h2 id="contact-title">Book Your Listing Shoot</h2>
           <p>Send us the property details and we'll confirm your shoot time. Your package and square footage fill in automatically from the calculator.</p>
           <p class="form-note">Prefer to call? Reach us at <a href="tel:+18138930360">(813) 893-0360</a>.</p>
-          <form class="contact-form" name="real-estate-media-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" aria-describedby="required-note">
+          <form class="contact-form" name="real-estate-media-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" data-lead-form action="/thank-you" aria-describedby="required-note">
             <input type="hidden" name="form-name" value="real-estate-media-booking" />
             <p class="visually-hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
             <p id="required-note" class="form-note">Fields marked with * are required.</p>
@@ -366,6 +366,7 @@
             <label class="full">Anything we should know?
               <textarea name="notes" rows="3" placeholder="Preferred shoot date, lockbox or gate codes, occupied or vacant..."></textarea>
             </label>
+            <div class="form-recaptcha" data-netlify-recaptcha="true"></div>
             <button class="btn btn-primary" type="submit">Request Booking</button>
           </form>
         </div>
