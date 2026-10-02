@@ -1931,3 +1931,6 @@ body.menu-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .testimonial { transition: none; }
 }
+
+/* Netlify reCAPTCHA widget: keep it from overflowing narrow phones */
+.form-recaptcha { margin: var(--space-1) 0 var(--space-2); max-width: 100%; overflow: hidden; }
