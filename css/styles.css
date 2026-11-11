@@ -1985,3 +1985,6 @@ body.menu-open { overflow: hidden; }
 }
 .local-office__nap--center { text-align: center; margin: var(--space-3) 0; }
 .local-office__cta { text-align: center; margin: 0; }
+
+/* Links inside the video hero intro */
+.video-hero p a { color: var(--accent); font-weight: 600; text-decoration: underline; }
