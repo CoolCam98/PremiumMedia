@@ -9,7 +9,8 @@ https://premiummediafl.com/* https://www.premiummediafl.com/:splat 301!
 /branding-design.html /branding-design 301!
 /commercials.html /commercials 301!
 /construction-video-production.html /construction-video-production 301!
-/construction-video-production-tampa.html /construction-video-production-tampa 301!
+/construction-video-production-tampa.html /construction-video-production 301!
+/construction-video-production-tampa /construction-video-production 301!
 /hvac-video-production.html /hvac-video-production 301!
 /attractions-tourism-video-production.html /attractions-tourism-video-production 301!
 /agriculture-video-production.html /agriculture-video-production 301!
@@ -54,7 +55,6 @@ https://premiummediafl.com/* https://www.premiummediafl.com/:splat 301!
 /branding-design /branding-design.html 200
 /commercials /commercials.html 200
 /construction-video-production /construction-video-production.html 200
-/construction-video-production-tampa /construction-video-production-tampa.html 200
 /hvac-video-production /hvac-video-production.html 200
 /attractions-tourism-video-production /attractions-tourism-video-production.html 200
 /agriculture-video-production /agriculture-video-production.html 200

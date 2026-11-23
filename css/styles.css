@@ -669,6 +669,7 @@ a.btn:hover, .nav a:hover, .footer-social a:hover { opacity: 1; }
   margin: 0 auto var(--space-4);
   font-size: 1.125rem;
 }
+.why-subtitle a { color: var(--accent); font-weight: 600; text-decoration: underline; }
 .why-link { display: inline-block; margin-top: var(--space-2); font-weight: 700; color: var(--accent); }
 .why-link:hover { color: var(--accent-hover); opacity: 1; }
 .why-link--white { color: #fff; }
