@@ -2178,3 +2178,11 @@ body.menu-open { overflow: hidden; }
 }
 /* Keep card category labels from stretching (aligns titles across cards) */
 .blog-card__body .blog-card__meta { flex: 0 0 auto; }
+
+/* Video page: service boxes in one grid */
+.video-services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-3); }
+.video-services-grid .video-block { display: flex; flex-direction: column; }
+.video-services-grid .video-block-media img { aspect-ratio: 16 / 10; height: auto; }
+.video-services-grid .video-block-text { display: flex; flex-direction: column; flex: 1; }
+.video-services-grid .video-block-text h2 { font-size: 1.3rem; margin-bottom: var(--space-1); }
+.video-services-grid .video-block-link { margin-top: auto; margin-bottom: 0; }
