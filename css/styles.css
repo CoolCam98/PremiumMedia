@@ -2105,3 +2105,26 @@ body.menu-open { overflow: hidden; }
 }
 .growth-charts > .growth-chart:only-child { max-width: 680px; width: 100%; justify-self: center; }
 .gc-point:hover .gc-dot { r: 6; }
+
+/* Single review quote under a stat bar */
+.proof-quote { margin: var(--space-4) auto 0; max-width: 760px; text-align: center; }
+.proof-quote blockquote { margin: 0; }
+.proof-quote blockquote p { font-size: 1.2rem; line-height: 1.6; color: var(--text); margin-bottom: 0.5rem; }
+.proof-quote figcaption { color: var(--text-muted); font-size: var(--small); }
+.proof-quote figcaption span[aria-hidden] { color: var(--accent); letter-spacing: 0.1em; }
+
+/* Certifications */
+.credentials {
+  list-style: none; margin: var(--space-3) 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-3);
+}
+.credential {
+  background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: var(--space-3); box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 0.4rem;
+}
+.credential__name { font-family: var(--font-stat); font-weight: 800; font-size: 1.45rem; color: var(--accent); line-height: 1.15; }
+.credential__desc { color: var(--text-muted); font-size: var(--small); line-height: 1.45; }
+.credentials-line {
+  text-align: center; margin: var(--space-3) 0 0; font-size: var(--small);
+  color: var(--text); letter-spacing: 0.01em;
+}
