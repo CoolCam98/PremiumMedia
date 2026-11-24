@@ -2087,3 +2087,19 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 420px) {
   .growth-charts { grid-template-columns: 1fr; }
 }
+
+/* Hero bar: headline + one-line pitch, buttons on the right */
+.hero-bleed-bar--cta { grid-template-columns: minmax(0, 1fr) auto; gap: clamp(1.2rem, 3vw, 3rem); }
+.hero-bleed-lede--wide { max-width: 760px; }
+.hero-bleed-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: flex-end; }
+.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: transparent;
+  color: #fff;
+}
+.btn-outline-light:hover { border-color: #fff; background: rgba(255, 255, 255, 0.08); }
+.btn-outline-light:focus-visible { outline: var(--focus-ring); outline-offset: 4px; }
+@media (max-width: 900px) {
+  .hero-bleed-bar--cta { grid-template-columns: 1fr; }
+  .hero-bleed-actions { justify-content: flex-start; }
+}
