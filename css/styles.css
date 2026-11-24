@@ -1993,3 +1993,66 @@ body.menu-open { overflow: hidden; }
 /* Video embed inside a pitch grid: stack the video and its caption */
 .pitch-media--video { flex-direction: column; align-items: stretch; gap: 0.75rem; background: none; overflow: visible; }
 .pitch-text p a:not(.why-link) { color: var(--accent); font-weight: 600; text-decoration: underline; }
+
+/* =========================================================
+   RESULTS STATS + CLIENT RESULTS CARDS
+========================================================= */
+.results-stats {
+  background: var(--bg-soft);
+  padding: var(--space-4) 0;
+}
+.results-stats__title { text-align: center; margin-bottom: var(--space-3); }
+.results-stats__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--space-3);
+}
+.results-stat { text-align: center; }
+.results-stat__num {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+.results-stat__label {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: var(--small);
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+.case-results { margin-top: var(--space-3); }
+.case-result { display: flex; flex-direction: column; }
+.case-result h3 { margin-top: 0; }
+.case-result__eyebrow {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+.case-result__stats {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-3);
+  display: grid;
+  gap: 0.6rem;
+  flex-grow: 1;
+}
+.case-result__stats li { color: var(--text-muted); line-height: 1.4; }
+.case-result__stats strong {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-right: 0.35rem;
+}
+.case-result .btn { align-self: flex-start; }
