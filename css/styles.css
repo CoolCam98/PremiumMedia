@@ -2178,3 +2178,42 @@ body.menu-open { overflow: hidden; }
 }
 /* Keep card category labels from stretching (aligns titles across cards) */
 .blog-card__body .blog-card__meta { flex: 0 0 auto; }
+
+/* Video page: service boxes in one grid */
+.video-services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-3); }
+.video-services-grid .video-block { display: flex; flex-direction: column; }
+.video-services-grid .video-block-media img { aspect-ratio: 16 / 10; height: auto; }
+.video-services-grid .video-block-text { display: flex; flex-direction: column; flex: 1; }
+.video-services-grid .video-block-text h2 { font-size: 1.3rem; margin-bottom: var(--space-1); }
+.video-services-grid .video-block-link { margin-top: auto; margin-bottom: 0; }
+
+/* Centered card rows (odd counts don't leave an orphan on the left) */
+.card-grid--center { display: flex; flex-wrap: wrap; justify-content: center; }
+.card-grid--center > .card { flex: 0 1 calc((100% - 2 * var(--space-3)) / 3); min-width: 260px; }
+@media (max-width: 700px) { .card-grid--center > .card { flex-basis: 100%; } }
+
+/* Results sections on service pages */
+.result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-3); margin-top: var(--space-3); }
+.result-card {
+  background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: var(--space-3); display: flex; flex-direction: column; gap: 0.35rem;
+}
+.result-card p { margin: 0; }
+.result-card__client { font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.result-card__num { font-family: var(--font-stat); font-weight: 800; font-size: clamp(2.2rem, 3.6vw, 2.8rem); line-height: 1.05; color: var(--accent); }
+.result-card__desc { color: var(--text-muted); font-size: var(--small); line-height: 1.45; }
+.result-extra { margin-top: var(--space-4); }
+
+/* Compact two-line design list (branding) */
+.design-list {
+  list-style: none; margin: var(--space-3) 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-2) var(--space-3);
+}
+.design-list li {
+  display: flex; flex-direction: column; gap: 0.2rem;
+  padding: var(--space-2) 0 var(--space-2) 1rem; border-left: 3px solid var(--accent);
+}
+.design-list strong { font-family: var(--font-heading); font-size: 1.1rem; color: var(--text); }
+.design-list span { color: var(--text-muted); font-size: var(--small); line-height: 1.45; }
+.photo-services-grid { margin-top: var(--space-3); }
+.video-services-grid .video-block-text h3 { font-size: 1.2rem; margin: 0 0 var(--space-1); }
