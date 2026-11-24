@@ -2163,3 +2163,18 @@ body.menu-open { overflow: hidden; }
 .work-item__tag { font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
 .work-item__title { font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; color: var(--text); }
 .work-item__desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.45; }
+
+/* Mobile: readable chart labels, swipeable work and insights rows */
+@media (max-width: 600px) {
+  .gc-axis { font-size: 20px; }
+  .gc-val { font-size: 22px; font-weight: 700; }
+  .growth-chart { padding: var(--space-2); }
+  .work-grid, .insights-row {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: var(--space-2);
+    margin-inline: -1rem; padding: 0 1rem 0.75rem; scrollbar-width: none;
+  }
+  .work-grid::-webkit-scrollbar, .insights-row::-webkit-scrollbar { display: none; }
+  .work-grid > .work-item, .insights-row > .blog-card { flex: 0 0 82%; scroll-snap-align: start; }
+}
+/* Keep card category labels from stretching (aligns titles across cards) */
+.blog-card__body .blog-card__meta { flex: 0 0 auto; }
