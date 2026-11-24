@@ -19,6 +19,7 @@
   --accent-dark: #414141;
   --font-heading: "Syne", sans-serif;
   --font-body: "Questrial", sans-serif;
+  --font-stat: "Bricolage Grotesque", "Syne", sans-serif;
   --h1: clamp(2rem, 3vw, 2.8rem);
   --h2: clamp(1.6rem, 2.6vw, 2.3rem);
   --h3: 1.25rem;
@@ -2013,10 +2014,12 @@ body.menu-open { overflow: hidden; }
 .results-stat { text-align: center; }
 .results-stat__num {
   display: block;
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: clamp(2.1rem, 3.6vw, 2.9rem);
-  line-height: 1.1;
+  font-family: var(--font-stat);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-variant-numeric: lining-nums;
   color: var(--accent);
 }
 .results-stat__label {
@@ -2048,8 +2051,8 @@ body.menu-open { overflow: hidden; }
 }
 .case-result__stats li { color: var(--text-muted); line-height: 1.4; }
 .case-result__stats strong {
-  font-family: var(--font-body);
-  font-weight: 400;
+  font-family: var(--font-stat);
+  font-weight: 800;
   font-size: 1.5rem;
   color: var(--accent);
   margin-right: 0.35rem;
