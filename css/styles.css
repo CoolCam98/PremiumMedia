@@ -2104,3 +2104,4 @@ body.menu-open { overflow: hidden; }
   .hero-bleed-actions { justify-content: flex-start; }
 }
 .growth-charts > .growth-chart:only-child { max-width: 680px; width: 100%; justify-self: center; }
+.gc-point:hover .gc-dot { r: 6; }
