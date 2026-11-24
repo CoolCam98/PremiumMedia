@@ -2219,3 +2219,7 @@ body.menu-open { overflow: hidden; }
 .video-services-grid .video-block-text h3 { font-size: 1.2rem; margin: 0 0 var(--space-1); }
 .video-services-grid.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: var(--space-3); }
 @media (max-width: 700px) { .video-services-grid.grid-2 { grid-template-columns: 1fr; } }
+
+/* Real estate pricing numbers: same bold stat font as the rest of the site */
+.re-slider-value, .re-package__price, .re-item__price, .re-total__price { font-family: var(--font-stat); letter-spacing: -0.01em; }
+.platform-band { padding-top: var(--space-3); padding-bottom: var(--space-3); }
