@@ -2013,11 +2013,10 @@ body.menu-open { overflow: hidden; }
 .results-stat { text-align: center; }
 .results-stat__num {
   display: block;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(2.1rem, 3.6vw, 2.9rem);
   line-height: 1.1;
-  letter-spacing: -0.02em;
   color: var(--accent);
 }
 .results-stat__label {
@@ -2049,10 +2048,39 @@ body.menu-open { overflow: hidden; }
 }
 .case-result__stats li { color: var(--text-muted); line-height: 1.4; }
 .case-result__stats strong {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.4rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.5rem;
   color: var(--accent);
   margin-right: 0.35rem;
 }
 .case-result .btn { align-self: flex-start; }
+
+/* =========================================================
+   GROWTH CHARTS (case studies)
+========================================================= */
+.growth-charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+.growth-chart { margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.growth-chart__title { margin: 0 0 0.25rem; font-size: var(--h3); }
+.growth-chart__note { margin: 0; font-size: 0.9rem; line-height: 1.45; }
+.growth-chart__legend {
+  list-style: none; margin: 0.25rem 0 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  font-size: 0.9rem; color: var(--text-muted);
+}
+.growth-chart__legend li { display: flex; align-items: center; gap: 0.4rem; }
+.gc-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.growth-chart__svg { width: 100%; height: auto; display: block; margin-top: 0.5rem; overflow: visible; }
+.growth-chart__svg text { font-family: var(--font-body); }
+.gc-axis { font-size: 12px; fill: #5a5a5a; }
+.gc-val { font-size: 13px; fill: var(--text); }
+.gc-bar path { transition: opacity 0.15s ease; }
+.gc-bar:hover path { opacity: 0.8; }
+@media (max-width: 420px) {
+  .growth-charts { grid-template-columns: 1fr; }
+}
