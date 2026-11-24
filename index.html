@@ -285,6 +285,58 @@
       </div>
     </section>
 
+        <section class="section" aria-labelledby="work-title">
+      <div class="container">
+        <h2 id="work-title" class="why-title">Featured Work</h2>
+        <p class="why-subtitle">Commercials, event coverage, and social video we&rsquo;ve produced for local businesses and national brands.</p>
+        <div class="work-grid">
+          <figure class="work-item">
+            <button type="button" class="yt-facade" data-yt="bkQdQY2bFyA" aria-label="Play video: Doom of the Dinosaurs">
+              <img src="https://i.ytimg.com/vi/bkQdQY2bFyA/hqdefault.jpg" alt="" loading="lazy" decoding="async" />
+              <span class="yt-facade__play" aria-hidden="true"></span>
+            </button>
+            <figcaption><span class="work-item__tag">Attractions</span><span class="work-item__title">Doom of the Dinosaurs</span><span class="work-item__desc">TV and streaming commercial for a national theme park chain</span></figcaption>
+          </figure>
+          <figure class="work-item">
+            <button type="button" class="yt-facade" data-yt="xyyuIXK1L8w" aria-label="Play video: Ceramic Coating Summer Special">
+              <img src="https://i.ytimg.com/vi/xyyuIXK1L8w/hqdefault.jpg" alt="" loading="lazy" decoding="async" />
+              <span class="yt-facade__play" aria-hidden="true"></span>
+            </button>
+            <figcaption><span class="work-item__tag">Automotive</span><span class="work-item__title">Ceramic Coating Summer Special</span><span class="work-item__desc">Seasonal promotion commercial</span></figcaption>
+          </figure>
+          <figure class="work-item">
+            <button type="button" class="yt-facade" data-yt="EoSUcNTs64w" aria-label="Play video: Hungry Howie's Parade Day">
+              <img src="https://i.ytimg.com/vi/EoSUcNTs64w/hqdefault.jpg" alt="" loading="lazy" decoding="async" />
+              <span class="yt-facade__play" aria-hidden="true"></span>
+            </button>
+            <figcaption><span class="work-item__tag">Restaurants</span><span class="work-item__title">Hungry Howie&rsquo;s Parade Day</span><span class="work-item__desc">Event coverage at the Florida Strawberry Festival parade</span></figcaption>
+          </figure>
+          <figure class="work-item">
+            <button type="button" class="yt-facade" data-yt="eue2Kzzbu7c" aria-label="Play video: Choo Choo Lawn Equipment">
+              <img src="https://i.ytimg.com/vi/eue2Kzzbu7c/hqdefault.jpg" alt="" loading="lazy" decoding="async" />
+              <span class="yt-facade__play" aria-hidden="true"></span>
+            </button>
+            <figcaption><span class="work-item__tag">Retail</span><span class="work-item__title">Choo Choo Lawn Equipment</span><span class="work-item__desc">Holiday social video: Santa vs. the Easter Bunny mower race</span></figcaption>
+          </figure>
+          <figure class="work-item">
+            <button type="button" class="yt-facade" data-yt="kMd8oaTeiBo" aria-label="Play video: Dinosaur World, Florida">
+              <img src="https://i.ytimg.com/vi/kMd8oaTeiBo/hqdefault.jpg" alt="" loading="lazy" decoding="async" />
+              <span class="yt-facade__play" aria-hidden="true"></span>
+            </button>
+            <figcaption><span class="work-item__tag">Attractions</span><span class="work-item__title">Dinosaur World, Florida</span><span class="work-item__desc">Park promo for web, social, and advertising</span></figcaption>
+          </figure>
+          <figure class="work-item">
+            <button type="button" class="yt-facade" data-yt="3OX0z5noaFY" aria-label="Play video: Santa Sweets Packing Company">
+              <img src="https://i.ytimg.com/vi/3OX0z5noaFY/hqdefault.jpg" alt="" loading="lazy" decoding="async" />
+              <span class="yt-facade__play" aria-hidden="true"></span>
+            </button>
+            <figcaption><span class="work-item__tag">Agriculture</span><span class="work-item__title">Santa Sweets Packing Company</span><span class="work-item__desc">Website brand video for a Plant City grower</span></figcaption>
+          </figure>
+        </div>
+        <p class="insights-more"><a href="videography-production" class="why-link">See more of our video work &rarr;</a></p>
+      </div>
+    </section>
+
     <section class="section section-contrast contact-section" aria-labelledby="commercial-title">
       <div class="container pitch-grid">
         <div class="pitch-text">
@@ -536,6 +588,20 @@
   </footer>
 
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    document.querySelectorAll(".yt-facade").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var f = document.createElement("iframe");
+        f.src = "https://www.youtube-nocookie.com/embed/" + btn.dataset.yt + "?autoplay=1";
+        f.title = btn.getAttribute("aria-label").replace("Play video: ", "");
+        f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        f.allowFullscreen = true;
+        f.referrerPolicy = "strict-origin-when-cross-origin";
+        btn.replaceWith(f);
+        f.focus();
+      });
+    });
+  </script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
