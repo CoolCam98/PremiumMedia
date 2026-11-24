@@ -1,6 +1,10 @@
 http://premiummediafl.com/* https://www.premiummediafl.com/:splat 301!
 https://premiummediafl.com/* https://www.premiummediafl.com/:splat 301!
 
+# Block bot traffic from Singapore (sub-second desktop visits that inflated GA4 "Direct" traffic).
+# A local Florida business loses no real customers here; remove this line if that changes.
+/*  /404.html  404!  Country=sg
+
 # Clean URLs: redirect old .html links (SEO equity) to extension-less paths,
 # then rewrite the clean paths to the underlying .html files so they serve content.
 # The .html redirects need "!" (force): the .html files exist, and Netlify skips
